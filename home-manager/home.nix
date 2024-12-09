@@ -43,6 +43,8 @@ in
       thefuck # auto correct commands
       watch
       viddy # alternate watch command
+      age # encryption tool
+      atac # postman like cli tool
       # Devops
       # operator-sdk
       kubectl

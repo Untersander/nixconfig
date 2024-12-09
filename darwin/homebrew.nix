@@ -5,6 +5,7 @@
     global.brewfile = true;
     onActivation.cleanup = "zap";
     masApps = {
+      "Windows App" = 1295203466;
     };
     casks = [
       "1password"
@@ -28,6 +29,7 @@
       "keycastr"
       # "logitech-presentation"
       "mactex"
+      "mac-mouse-fix"
       "microsoft-auto-update"
       "microsoft-teams"
       "microsoft-word"
@@ -97,7 +99,6 @@
       # "iodine"
       "iproute2mac"
       "istioctl"
-      "jq"
       "k9s"
       "ko"
       "kompose"
@@ -130,7 +131,6 @@
       "typst"
       "uv"
       "yq"
-      "zoxide"
       "argoproj/tap/kubectl-argo-rollouts"
       "dagger/tap/dagger"
       "go-task/tap/go-task"

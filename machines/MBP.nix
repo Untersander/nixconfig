@@ -104,20 +104,41 @@
         InitialKeyRepeat = 15;
         KeyRepeat = 2;
         NSAutomaticSpellingCorrectionEnabled = false;
+        NSWindowShouldDragOnGesture = true;
+        NSNavPanelExpandedStateForSaveMode = true;
+        NSDocumentSaveNewDocumentsToCloud = false;
       };
 
       finder = {
         AppleShowAllFiles = true;
+        AppleShowAllExtensions = true;
         NewWindowTarget = "Documents";
         FXPreferredViewStyle = "clmv";
         ShowPathbar = true;
       };
 
+      loginwindow.GuestEnabled = false;
+
       dock = {
         autohide = true;
         autohide-delay = 0.0;
         show-recents = false;
+        mru-spaces = false;
         wvous-tr-corner = 12; # Hot corner top right notification center
+        persistent-apps = [
+          "${pkgs.iterm2}/Applications/iTerm2.app"
+          "/Applications/Brave Browser.app"
+          "${pkgs.vscode}/Applications/Visual Studio Code.app"
+        ];
+      };
+
+      controlcenter = {
+        BatteryShowPercentage = true;
+        Bluetooth = true;
+      };
+
+      alf = {
+        globalstate = 1;
       };
     };
   };
