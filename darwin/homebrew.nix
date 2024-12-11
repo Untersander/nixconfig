@@ -61,6 +61,7 @@
     taps = [
       "nikitabobko/tap"
       "argoproj/tap"
+      "anchore/grype"
       "dagger/tap"
       "go-task/tap"
       "goreleaser/tap"
@@ -70,6 +71,7 @@
     ];
     brews = [
       "mas"
+      "grype"
       # "apktool"
       # "jadx"
       "argocd"
