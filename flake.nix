@@ -15,9 +15,9 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
     {
-      darwinConfigurations."MBP" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations."Worker" = nix-darwin.lib.darwinSystem {
         modules = [
-          ./machines/MBP.nix
+          ./machines/Worker.nix
           ./darwin/homebrew.nix
           home-manager.darwinModules.home-manager
           {

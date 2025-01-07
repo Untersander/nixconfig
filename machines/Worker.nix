@@ -125,7 +125,10 @@
         autohide-delay = 0.0;
         show-recents = false;
         mru-spaces = false;
+        wvous-tl-corner = 13; # Hot corner top left lock screen
         wvous-tr-corner = 12; # Hot corner top right notification center
+        wvous-bl-corner = 1; # Hot corner bottom left disabled
+        wvous-br-corner = 1; # Hot corner bottom right disabled
         persistent-apps = [
           "${pkgs.iterm2}/Applications/iTerm2.app"
           "/Applications/Brave Browser.app"
