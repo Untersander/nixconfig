@@ -76,7 +76,6 @@
       # "apktool"
       # "jadx"
       "argocd"
-      "atuin"
       "blueutil"
       "broot"
       "btop"
