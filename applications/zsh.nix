@@ -9,11 +9,12 @@
     shellAliases = {
       switch = "darwin-rebuild switch --flake ~/nixconfig";
       check = "darwin-rebuild check --flake ~/nixconfig";
+      nixbuild = "darwin-rebuild build --flake ~/nixconfig";
       nixupdate = "nix flake update --flake ~/nixconfig";
-      nixdiff = "cd /tmp && nix flake update --flake ~/nixconfig && darwin-rebuild build --flake ~/nixconfig && nix store diff-closures /var/run/current-system ./result && cd -";
-      nixudiff = "cd /tmp && nix flake update --flake ~/nixconfig && darwin-rebuild build --flake ~/nixconfig && nix store diff-closures /var/run/current-system ./result && cd -";
-      nvdiff = "cd /tmp && nix flake update --flake ~/nixconfig && darwin-rebuild build --flake ~/nixconfig && nvd diff /var/run/current-system ./result && cd -";
-      nvudiff = "cd /tmp && nix flake update --flake ~/nixconfig && darwin-rebuild build --flake ~/nixconfig && nvd diff /var/run/current-system ./result && cd -";
+      nixdiff = "cd ~/nixconfig && nixupdate && nixbuild && nix store diff-closures /var/run/current-system ./result";
+      nixudiff = "cd ~/nixconfig && nixupdate && nixbuild && nix store diff-closures /var/run/current-system ./result";
+      nvdiff = "cd ~/nixconfig && nixupdate && nixbuild && nvd diff /var/run/current-system ./result";
+      nvudiff = "cd ~/nixconfig && nixupdate && nixbuild && nvd diff /var/run/current-system ./result";
       gas = "git add . & switch";
       sz = "source ~/.config/zsh/.zshrc";
       k = "kubectl";
