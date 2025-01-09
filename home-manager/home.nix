@@ -38,6 +38,7 @@ in
       htop
       btop
       gdu
+      nvd
       sshpass # required for ansible
       comma # nix-shell wrapper
       thefuck # auto correct commands
