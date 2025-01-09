@@ -48,7 +48,8 @@ in
       atac # postman like cli tool
       wireshark
       # Devops
-      # operator-sdk
+      operator-sdk
+      devbox
       kubectl
       krew
       kubernetes-helm
