@@ -20,6 +20,7 @@
       "alt-tab"
       "balenaetcher"
       "blender"
+      "devpod"
       "discord"
       "drawio"
       "firefox"

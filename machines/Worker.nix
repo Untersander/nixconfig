@@ -30,7 +30,8 @@
   };
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "Meslo" ]; }) # Add font hack nerd font
+    nerd-fonts.fira-code
+    nerd-fonts.meslo-lg
   ];
 
   # Enable services
@@ -67,6 +68,7 @@
       ];
     };
     defaults = {
+      # Helpful info see: https://macos-defaults.com/
       CustomUserPreferences = {
         # Find custom user preferences with 'defaults find ...'
         "com.apple.symbolichotkeys" = {
@@ -75,6 +77,9 @@
               enabled = false;
             };
           };
+        };
+        "com.apple.dock" = {
+          expose-group-apps = true; # Fix for expose having very small icons with aerospace
         };
         "com.apple.desktopservices" = {
           # Avoid creating .DS_Store files on network or USB volumes
@@ -101,6 +106,7 @@
         AppleICUForce24HourTime = true;
         AppleInterfaceStyle = "Dark";
         ApplePressAndHoldEnabled = false;
+        AppleKeyboardUIMode = 3;
         InitialKeyRepeat = 15;
         KeyRepeat = 2;
         "com.apple.keyboard.fnState" = true;
@@ -124,16 +130,22 @@
         autohide = true;
         autohide-delay = 0.0;
         show-recents = false;
+        magnification = true;
+        tilesize = 32;
+        largesize = 64;
+        mouse-over-hilite-stack = true;
         mru-spaces = false;
         wvous-tl-corner = 13; # Hot corner top left lock screen
         wvous-tr-corner = 12; # Hot corner top right notification center
         wvous-bl-corner = 1; # Hot corner bottom left disabled
         wvous-br-corner = 1; # Hot corner bottom right disabled
+        orientation = "left";
         persistent-apps = [
           "${pkgs.iterm2}/Applications/iTerm2.app"
           "/Applications/Brave Browser.app"
           "${pkgs.vscode}/Applications/Visual Studio Code.app"
         ];
+        scroll-to-open = true;
       };
 
       controlcenter = {

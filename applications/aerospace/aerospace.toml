@@ -92,15 +92,16 @@ alt-enter = 'exec-and-forget open -a iTerm'
 
 cmd-h = []
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
-alt-slash = 'layout h_tiles h_accordion'
+alt-slash = 'layout h_tiles h_accordion v_accordion'
 alt-f = 'fullscreen'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-alt-h = 'focus left'
-alt-j = 'focus down'
-alt-k = 'focus up'
-alt-l = 'focus right'
-alt-comma = 'focus-monitor --wrap-around next'
+alt-h = 'focus --boundaries all-monitors-outer-frame left'
+alt-j = 'focus --boundaries-action wrap-around-the-workspace down'
+alt-k = 'focus --boundaries-action wrap-around-the-workspace up'
+alt-l = 'focus --boundaries all-monitors-outer-frame right'
+alt-comma = 'focus-monitor --wrap-around prev'
+alt-period = 'focus-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 alt-shift-h = 'move left'
@@ -149,17 +150,39 @@ alt-0 = 'workspace O'
 ctrl-right = 'workspace --wrap-around next'
 ctrl-left = 'workspace --wrap-around prev'
 
+# See: https://nikitabobko.github.io/AeroSpace/commands#summon-workspace
+ctrl-alt-1 = 'summon-workspace 1'
+ctrl-alt-2 = 'summon-workspace 2'
+ctrl-alt-3 = 'summon-workspace 3'
+ctrl-alt-4 = 'summon-workspace 4'
+ctrl-alt-5 = 'summon-workspace 5'
+ctrl-alt-6 = 'summon-workspace 6'
+ctrl-alt-7 = 'summon-workspace 7'
+ctrl-alt-8 = 'summon-workspace 8'
+ctrl-alt-9 = 'summon-workspace 9'
+ctrl-alt-0 = 'summon-workspace O'
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-1 = 'move-node-to-workspace 1'
-alt-shift-2 = 'move-node-to-workspace 2'
-alt-shift-3 = 'move-node-to-workspace 3'
-alt-shift-4 = 'move-node-to-workspace 4'
-alt-shift-5 = 'move-node-to-workspace 5'
-alt-shift-6 = 'move-node-to-workspace 6'
-alt-shift-7 = 'move-node-to-workspace 7'
-alt-shift-8 = 'move-node-to-workspace 8'
-alt-shift-9 = 'move-node-to-workspace 9'
-alt-shift-0 = 'move-node-to-workspace O'
+alt-shift-1 = 'move-node-to-workspace --focus-follows-window 1'
+alt-shift-2 = 'move-node-to-workspace --focus-follows-window 2'
+alt-shift-3 = 'move-node-to-workspace --focus-follows-window 3'
+alt-shift-4 = 'move-node-to-workspace --focus-follows-window 4'
+alt-shift-5 = 'move-node-to-workspace --focus-follows-window 5'
+alt-shift-6 = 'move-node-to-workspace --focus-follows-window 6'
+alt-shift-7 = 'move-node-to-workspace --focus-follows-window 7'
+alt-shift-8 = 'move-node-to-workspace --focus-follows-window 8'
+alt-shift-9 = 'move-node-to-workspace --focus-follows-window 9'
+alt-shift-0 = 'move-node-to-workspace --focus-follows-window O'
+ctrl-alt-shift-1 = 'move-node-to-workspace 1'
+ctrl-alt-shift-2 = 'move-node-to-workspace 2'
+ctrl-alt-shift-3 = 'move-node-to-workspace 3'
+ctrl-alt-shift-4 = 'move-node-to-workspace 4'
+ctrl-alt-shift-5 = 'move-node-to-workspace 5'
+ctrl-alt-shift-6 = 'move-node-to-workspace 6'
+ctrl-alt-shift-7 = 'move-node-to-workspace 7'
+ctrl-alt-shift-8 = 'move-node-to-workspace 8'
+ctrl-alt-shift-9 = 'move-node-to-workspace 9'
+ctrl-alt-shift-0 = 'move-node-to-workspace O'
 # alt-shift-a = 'move-node-to-workspace A'
 # alt-shift-b = 'move-node-to-workspace B'
 # alt-shift-c = 'move-node-to-workspace C'
@@ -215,13 +238,13 @@ alt-shift-l = ['join-with right', 'mode main']
 # 4 = 'built-in'                   # Case insensitive regex substring
 # 5 = '^built-in retina display$'  # Case insensitive regex match
 # 6 = ['secondary', 'dell']        # You can specify multiple patterns. The first matching pattern will be used
-1 = '2'
-2 = 'main'
-3 = 'main'
-4 = 'main'
-5 = 'main'
-6 = ['built-in', 'secondary']
-7 = ['dell', 'secondary']
+1 = 'main'
+# 2 = 'main'
+# 3 = 'main'
+# 4 = 'main'
+# 5 = 'main'
+# 6 = ['dell', 'secondary']
+7 = ['built-in', 'secondary']
 8 = ['dell', 'secondary']
 9 = ['dell', 'secondary']
 O = ['dell', 'secondary']
