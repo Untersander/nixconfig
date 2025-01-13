@@ -106,7 +106,7 @@
         AppleICUForce24HourTime = true;
         AppleInterfaceStyle = "Dark";
         ApplePressAndHoldEnabled = false;
-        AppleKeyboardUIMode = 3;
+        AppleKeyboardUIMode = 3; # If set in UI value is 2, but Nix-darwin only allows 3, but works aswell
         InitialKeyRepeat = 15;
         KeyRepeat = 2;
         "com.apple.keyboard.fnState" = true;
@@ -135,11 +135,11 @@
         largesize = 64;
         mouse-over-hilite-stack = true;
         mru-spaces = false;
-        wvous-tl-corner = 13; # Hot corner top left lock screen
+        wvous-tl-corner = 1; # Hot corner top left disabled
         wvous-tr-corner = 12; # Hot corner top right notification center
         wvous-bl-corner = 1; # Hot corner bottom left disabled
         wvous-br-corner = 1; # Hot corner bottom right disabled
-        orientation = "left";
+        orientation = "right";
         persistent-apps = [
           "${pkgs.iterm2}/Applications/iTerm2.app"
           "/Applications/Brave Browser.app"

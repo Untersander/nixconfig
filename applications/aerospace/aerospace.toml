@@ -88,7 +88,7 @@ PATH = '/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}'
 # You can uncomment this line to open up terminal with alt + enter shortcut
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
 # alt-enter = 'exec-and-forget open -a /System/Applications/Utilities/Terminal.app'
-alt-enter = 'exec-and-forget open -a iTerm'
+# alt-enter = 'exec-and-forget open -a iTerm' # Keybinding to many conflicts with other apps
 
 cmd-h = []
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
@@ -239,11 +239,11 @@ alt-shift-l = ['join-with right', 'mode main']
 # 5 = '^built-in retina display$'  # Case insensitive regex match
 # 6 = ['secondary', 'dell']        # You can specify multiple patterns. The first matching pattern will be used
 1 = 'main'
-# 2 = 'main'
-# 3 = 'main'
-# 4 = 'main'
-# 5 = 'main'
-# 6 = ['dell', 'secondary']
+2 = 'main'
+3 = 'main'
+4 = 'main'
+5 = 'main'
+6 = ['dell', 'secondary']
 7 = ['built-in', 'secondary']
 8 = ['dell', 'secondary']
 9 = ['dell', 'secondary']

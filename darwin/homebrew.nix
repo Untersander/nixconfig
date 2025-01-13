@@ -106,7 +106,6 @@
       "ko"
       "kompose"
       "kubent"
-      "lsd"
       "mtr"
       "ncdu"
       "nmap"
