@@ -11,9 +11,9 @@
       check = "darwin-rebuild check --flake ~/nixconfig";
       nixbuild = "darwin-rebuild build --flake ~/nixconfig";
       nixupdate = "nix flake update --flake ~/nixconfig";
-      nixdiff = "cd ~/nixconfig && nixupdate && nixbuild && nix store diff-closures /var/run/current-system ./result";
+      nixdiff = "cd ~/nixconfig && nixbuild && nix store diff-closures /var/run/current-system ./result";
       nixudiff = "cd ~/nixconfig && nixupdate && nixbuild && nix store diff-closures /var/run/current-system ./result";
-      nvdiff = "cd ~/nixconfig && nixupdate && nixbuild && nvd diff /var/run/current-system ./result";
+      nvdiff = "cd ~/nixconfig && nixbuild && nvd diff /var/run/current-system ./result";
       nvudiff = "cd ~/nixconfig && nixupdate && nixbuild && nvd diff /var/run/current-system ./result";
       gas = "git add . & switch";
       sz = "source ~/.config/zsh/.zshrc";

@@ -47,6 +47,8 @@ in
       age # encryption tool
       atac # postman like cli tool
       wireshark
+      mpv # Currently not launchable from raycast/finder
+      texlive.combined.scheme-full
       # Devops
       operator-sdk
       devbox
