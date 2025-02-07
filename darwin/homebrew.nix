@@ -6,6 +6,7 @@
     onActivation.cleanup = "zap";
     masApps = {
       "Windows App" = 1295203466;
+      "Yubico Authenticator" = 1497506650;
     };
     casks = [
       "1password"
@@ -107,6 +108,8 @@
       "kompose"
       "kubent"
       "mtr"
+      # "pnpm"
+      "protobuf"
       "ncdu"
       "nmap"
       "nnn"
