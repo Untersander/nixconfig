@@ -1,4 +1,10 @@
-{ config, pkgs, lib, ... }: {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
 
   # Declare the user that will be running `nix-darwin`.
   users.users.jan = {
@@ -8,11 +14,10 @@
 
   # The platform the configuration will be used on.
   # If you're on an Intel system, replace with "x86_64-darwin"
-  nixpkgs =
-    {
-      hostPlatform = "aarch64-darwin";
-      config.allowUnfree = true;
-    };
+  nixpkgs = {
+    hostPlatform = "aarch64-darwin";
+    config.allowUnfree = true;
+  };
 
   # Security settings
   security.pam.enableSudoTouchIdAuth = true;
@@ -20,7 +25,10 @@
   # Create /etc/zshrc that loads the nix-darwin environment.
   programs.zsh.enable = true;
   environment = {
-    shells = with pkgs; [ bash zsh ];
+    shells = with pkgs; [
+      bash
+      zsh
+    ];
     systemPackages = with pkgs; [
       # raycast # Maybe save config to dotfiles
       iterm2
@@ -43,6 +51,23 @@
       settings = { };
     };
   };
+  # Enable ollama background service
+  # launchd = {
+  #   user = {
+  #     agents = {
+  #       ollama-serve = {
+  #         command = "${pkgs.ollama}/bin/ollama serve";
+  #         serviceConfig = {
+  #           Label = "Ollama";
+  #           KeepAlive = true;
+  #           RunAtLoad = true;
+  #           StandardOutPath = "/tmp/ollama_worker.out.log";
+  #           StandardErrorPath = "/tmp/ollama_worker.err.log";
+  #         };
+  #       };
+  #     };
+  #   };
+  # };
 
   system = {
     keyboard = {
@@ -92,10 +117,9 @@
           visible = 1;
         };
         # Specify the iterm preferences directory
-        "com.googlecode.iterm2" =
-          {
-            PrefsCustomFolder = "~/nixconfig/applications/iTerm2/";
-          };
+        "com.googlecode.iterm2" = {
+          PrefsCustomFolder = "~/nixconfig/applications/iTerm2/";
+        };
         # Tell iTerm2 to use the custom preferences in the directory
         "com.googlecode.iterm2" = {
           LoadPrefsFromCustomFolder = true;

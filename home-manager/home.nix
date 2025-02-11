@@ -8,6 +8,7 @@ let
     /raycast/raycast.nix
     /ssh/ssh.nix
     /go.nix
+    /ollama.nix
   ];
 
 in
@@ -31,7 +32,7 @@ in
       git
       tmux
       wget
-      nixpkgs-fmt
+      nixfmt-rfc-style
       vscode
       obsidian
       bat
@@ -39,6 +40,7 @@ in
       btop
       gdu
       nvd
+      nil
       sshpass # required for ansible
       comma # nix-shell wrapper
       thefuck # auto correct commands
@@ -61,18 +63,14 @@ in
     ];
   };
 
-
   # Let Home Manager install and manage itself.
   programs = {
     home-manager.enable = true;
-
     nix-index = {
       # comma dependency
       enable = true;
       enableZshIntegration = true;
     };
-
-
   };
 
   # This value determines the Home Manager release that your
