@@ -56,6 +56,7 @@ in
       devbox
       kubectl
       krew
+      stern
       kubernetes-helm
       kustomize
       kind
