@@ -56,6 +56,7 @@
       "ukelele"
       # "visual-studio"
       # "visual-studio-code"
+      "vmware-fusion"
       # "wireshark"
       "whatsapp"
       "zed"
