@@ -33,6 +33,9 @@
       ignoreSpace = true;
       ignoreAllDups = true;
     };
+    # .zshenv
+    # envExtra = '''';
+    # .zprofile
     profileExtra = ''
       # Homebrew
       eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -43,7 +46,10 @@
         mkdir -p "$(dirname $ZINIT_HOME)"
         git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
       fi
+      # UV tools (python tools)
+      export PATH="''$PATH:''$HOME/.local/bin"
     '';
+    # .zshrc
     # initExtraFirst = '''';
     initExtraBeforeCompInit = ''
       source "$ZINIT_HOME/zinit.zsh"
