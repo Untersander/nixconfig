@@ -18,7 +18,7 @@
       "nikitabobko/tap/aerospace"
       # "4k-video-downloader"
       # "adobe-acrobat-reader"
-      "alt-tab"
+      # "alt-tab"
       "balenaetcher"
       "blender"
       "devpod"
