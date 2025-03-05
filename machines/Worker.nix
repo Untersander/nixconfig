@@ -20,7 +20,7 @@
   };
 
   # Security settings
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   # Create /etc/zshrc that loads the nix-darwin environment.
   programs.zsh.enable = true;
@@ -44,7 +44,6 @@
 
   # Enable services
   services = {
-    nix-daemon.enable = true;
     aerospace = {
       # Currently not working
       enable = false;

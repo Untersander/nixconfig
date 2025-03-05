@@ -9,6 +9,7 @@ let
     /ssh/ssh.nix
     /go.nix
     /ollama.nix
+    /aws/aws.nix
   ];
 
 in
@@ -27,40 +28,46 @@ in
       LANG = "en_US.UTF-8";
     };
     packages = with pkgs; [
+      # Command Line
       neofetch
       neovim
       git
       tmux
       wget
-      nixfmt-rfc-style
-      vscode
-      obsidian
       bat
       htop
       btop
       gdu
-      nvd
-      nil
-      sshpass # required for ansible
-      comma # nix-shell wrapper
-      thefuck # auto correct commands
       watch
       viddy # alternate watch command
       age # encryption tool
       atac # postman like cli tool
+      comma # nix-shell wrapper
       wireshark
-      mpv # Currently not launchable from raycast/finder
+      nvd
+      thefuck # auto correct commands
+      # Nix
+      nil
+      nixfmt-rfc-style
+      # Desktop apps
+      vscode
+      obsidian
+      mpv
+      # Tex
       texlive.combined.scheme-full
       # Devops
-      operator-sdk
+      gh
       devbox
+      ansible
+      sshpass # required for ansible
+      # K8s
       kubectl
       krew
-      stern
-      kubernetes-helm
       kustomize
+      kubernetes-helm
+      stern
       kind
-      ansible
+      operator-sdk
     ];
   };
 
