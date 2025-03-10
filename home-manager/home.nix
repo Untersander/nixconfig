@@ -50,9 +50,9 @@ in
       nil
       nixfmt-rfc-style
       # Desktop apps
-      vscode
-      obsidian
-      mpv
+      # vscode
+      # obsidian
+      # mpv
       # Tex
       texlive.combined.scheme-full
       # Devops

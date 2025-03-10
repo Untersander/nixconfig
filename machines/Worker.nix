@@ -166,7 +166,7 @@
         persistent-apps = [
           "${pkgs.iterm2}/Applications/iTerm2.app"
           "/Applications/Brave Browser.app"
-          "${pkgs.vscode}/Applications/Visual Studio Code.app"
+          "/Applications/Visual Studio Code.app"
         ];
         scroll-to-open = true;
       };
