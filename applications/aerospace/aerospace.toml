@@ -147,6 +147,7 @@ alt-0 = 'workspace O'
 # alt-y = 'workspace Y'
 # alt-z = 'workspace Z'
 
+alt-e = 'exec-and-forget aerospace list-workspaces --monitor focused --empty | aerospace workspace --wrap-around next'
 ctrl-right = 'workspace --wrap-around next'
 ctrl-left = 'workspace --wrap-around prev'
 
