@@ -43,7 +43,7 @@ in
       age # encryption tool
       atac # postman like cli tool
       comma # nix-shell wrapper
-      wireshark
+      # wireshark
       nvd
       thefuck # auto correct commands
       # Nix
@@ -54,12 +54,13 @@ in
       # obsidian
       # mpv
       # Tex
-      texlive.combined.scheme-full
+      texliveFull
       # Devops
       gh
       devbox
-      ansible
-      sshpass # required for ansible
+      niv
+      # ansible
+      # sshpass # required for ansible
       # K8s
       kubectl
       krew
