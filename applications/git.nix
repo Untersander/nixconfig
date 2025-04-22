@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 let
   publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBcS2Q2ECuF0eu+GdsULBu6uwfRrVyoIQNN5AarCNOQ/";
@@ -11,21 +11,22 @@ in
 
     lfs.enable = true;
 
-    ignores = [
-      # IDEs
-      ".vscode"
-      ".vsc"
-      ".vs"
-      ".idea"
-      # Python
-      "*.pyc"
-      "*.pyo"
-      "__pycache__"
-      # Node
-      "node_modules"
-      "npm-debug.log"
-    ] ++ pkgs.lib.optionals pkgs.stdenv.isDarwin
+    ignores =
       [
+        # IDEs
+        ".vscode"
+        ".vsc"
+        ".vs"
+        ".idea"
+        # Python
+        "*.pyc"
+        "*.pyo"
+        "__pycache__"
+        # Node
+        "node_modules"
+        "npm-debug.log"
+      ]
+      ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [
         # MacOS
         ## General
         ".DS_Store"
@@ -65,7 +66,9 @@ in
     };
 
     extraConfig = {
-      init = { defaultBranch = "main"; };
+      init = {
+        defaultBranch = "main";
+      };
       push.autoSetupRemote = true;
       pull.rebase = true;
       fetch.pruen = true;
@@ -82,9 +85,6 @@ in
     };
   };
 }
-
-
-
 
 #   extraConfig = {
 # init.defaultBranch = "main";

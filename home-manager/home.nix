@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 let
   imports = map (x: ../applications + x) [
     /git.nix

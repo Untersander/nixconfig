@@ -13,7 +13,13 @@
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
+  outputs =
+    inputs@{
+      self,
+      nix-darwin,
+      nixpkgs,
+      home-manager,
+    }:
     {
       darwinConfigurations."Worker" = nix-darwin.lib.darwinSystem {
         modules = [
@@ -22,12 +28,12 @@
           home-manager.darwinModules.home-manager
           {
             home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            verbose = true;
-            users.jan.imports = [
-              ./home-manager/home.nix
-            ];
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              verbose = true;
+              users.jan.imports = [
+                ./home-manager/home.nix
+              ];
             };
           }
         ];

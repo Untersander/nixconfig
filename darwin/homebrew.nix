@@ -1,4 +1,5 @@
-{ config, pkgs, lib, ... }: {
+{ ... }:
+{
   homebrew = {
     enable = true;
     caskArgs.no_quarantine = true;

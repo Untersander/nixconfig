@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, ... }:
+{
   home.file.aws = {
     enable = true;
     target = "./.aws/credentials";
