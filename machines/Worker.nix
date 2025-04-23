@@ -26,7 +26,6 @@
     ];
     systemPackages = with pkgs; [
       # raycast # Maybe save config to dotfiles
-      iterm2
     ];
     systemPath = [ "/opt/homebrew/bin" ];
     pathsToLink = [ "/Applications" ];
@@ -159,7 +158,7 @@
         wvous-br-corner = 1; # Hot corner bottom right disabled
         orientation = "right";
         persistent-apps = [
-          "${pkgs.iterm2}/Applications/iTerm2.app"
+          "/Applications/iTerm2.app"
           "/Applications/Brave Browser.app"
           "/Applications/Visual Studio Code.app"
         ];
