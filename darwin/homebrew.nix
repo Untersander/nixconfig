@@ -105,7 +105,7 @@
       "gnmic"
       "graphviz"
       "hadolint"
-      "htop"
+      # "htop"
       "hubble"
       "imagemagick"
       # "iodine"
