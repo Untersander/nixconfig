@@ -124,6 +124,7 @@ alt-7 = 'workspace 7'
 alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
 alt-0 = 'workspace O'
+alt-i = 'workspace I'
 # alt-a = 'workspace A'
 # alt-b = 'workspace B'
 # alt-c = 'workspace C'
@@ -162,6 +163,7 @@ ctrl-alt-7 = 'summon-workspace 7'
 ctrl-alt-8 = 'summon-workspace 8'
 ctrl-alt-9 = 'summon-workspace 9'
 ctrl-alt-0 = 'summon-workspace O'
+ctrl-alt-i = 'summon-workspace I'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace --focus-follows-window 1'
@@ -174,6 +176,7 @@ alt-shift-7 = 'move-node-to-workspace --focus-follows-window 7'
 alt-shift-8 = 'move-node-to-workspace --focus-follows-window 8'
 alt-shift-9 = 'move-node-to-workspace --focus-follows-window 9'
 alt-shift-0 = 'move-node-to-workspace --focus-follows-window O'
+alt-shift-i = 'move-node-to-workspace --focus-follows-window I'
 ctrl-alt-shift-1 = 'move-node-to-workspace 1'
 ctrl-alt-shift-2 = 'move-node-to-workspace 2'
 ctrl-alt-shift-3 = 'move-node-to-workspace 3'
@@ -184,6 +187,7 @@ ctrl-alt-shift-7 = 'move-node-to-workspace 7'
 ctrl-alt-shift-8 = 'move-node-to-workspace 8'
 ctrl-alt-shift-9 = 'move-node-to-workspace 9'
 ctrl-alt-shift-0 = 'move-node-to-workspace O'
+ctrl-alt-shift-i = 'move-node-to-workspace I'
 # alt-shift-a = 'move-node-to-workspace A'
 # alt-shift-b = 'move-node-to-workspace B'
 # alt-shift-c = 'move-node-to-workspace C'
@@ -246,11 +250,11 @@ alt-shift-l = ['join-with right', 'mode main']
 4 = 'main'
 5 = 'main'
 6 = ['dell', 'secondary']
-7 = ['built-in', 'secondary']
+7 = ['dell', 'secondary']
 8 = ['dell', 'secondary']
 9 = ['dell', 'secondary']
 O = ['dell', 'secondary']
-# B = 'built-in'
+I  = ['built-in', 'secondary']
 
 
 # Float specific apps
