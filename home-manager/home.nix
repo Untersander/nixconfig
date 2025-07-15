@@ -24,6 +24,7 @@ in
     homeDirectory = "/Users/jan";
     sessionVariables = {
       EDITOR = "nvim";
+      PAGER = "bat -p";
       VISUAL = "nvim";
       LANG = "en_US.UTF-8";
     };
