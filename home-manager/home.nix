@@ -30,23 +30,22 @@ in
     };
     packages = with pkgs; [
       # Command Line
-      neofetch
-      neovim
-      git
-      tmux
-      wget
-      bat
-      htop
-      btop
-      gdu
-      watch
-      viddy # alternate watch command
       age # encryption tool
       atac # postman like cli tool
+      bat
+      btop
       comma # nix-shell wrapper
-      # wireshark
+      gdu
+      git
+      htop
+      neofetch
+      neovim
       nvd
       thefuck # auto correct commands
+      tmux
+      viddy # alternate watch command
+      watch
+      wget
       # Nix
       nil
       nixfmt-rfc-style
@@ -57,19 +56,17 @@ in
       # Tex
       texliveFull
       # Devops
-      gh
       devbox
+      gh
       niv
-      # ansible
-      # sshpass # required for ansible
       # K8s
-      kubectl
-      krew
-      kustomize
-      kubernetes-helm
-      stern
       kind
+      krew
+      kubectl
+      kubernetes-helm
+      kustomize
       operator-sdk
+      stern
     ];
   };
 
