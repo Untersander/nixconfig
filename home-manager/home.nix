@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 let
   imports = map (x: ../applications + x) [
     /git.nix
@@ -41,7 +41,6 @@ in
       neofetch
       neovim
       nvd
-      thefuck # auto correct commands
       tmux
       viddy # alternate watch command
       watch
@@ -60,13 +59,13 @@ in
       gh
       niv
       # K8s
-      kind
-      krew
-      kubectl
-      kubernetes-helm
-      kustomize
-      operator-sdk
-      stern
+      pkgs-unstable.kind
+      pkgs-unstable.krew
+      pkgs-unstable.kubectl
+      pkgs-unstable.kubernetes-helm
+      pkgs-unstable.kustomize
+      pkgs-unstable.operator-sdk
+      pkgs-unstable.stern
     ];
   };
 

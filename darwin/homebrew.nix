@@ -114,7 +114,6 @@
       "k9s"
       "ko"
       "kompose"
-      "krew"
       "kubent"
       "mas"
       "mtr"

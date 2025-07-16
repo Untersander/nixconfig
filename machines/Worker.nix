@@ -6,6 +6,7 @@
     name = "jan";
     home = "/Users/jan";
   };
+  system.primaryUser = "jan";
 
   # The platform the configuration will be used on.
   # If you're on an Intel system, replace with "x86_64-darwin"
@@ -169,12 +170,21 @@
         BatteryShowPercentage = true;
         Bluetooth = true;
       };
-
       alf = {
         globalstate = 1;
       };
     };
   };
+
+# will deprecate system.alf.globalstate in 25.11 release
+  # networking = {
+  #   # Enable the firewall
+  #   applicationFirewall = {
+  #     enable = true;
+  #     enableStealthMode = true;
+  #     blockAllIncoming = true;
+  #   };
+  # };
 
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";

@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -8,8 +8,8 @@
     dotDir = ".config/zsh";
 
     shellAliases = {
-      switch = "darwin-rebuild switch --flake ~/nixconfig";
-      check = "darwin-rebuild check --flake ~/nixconfig";
+      switch = "sudo darwin-rebuild switch --flake ~/nixconfig";
+      check = "sudo darwin-rebuild check --flake ~/nixconfig";
       nixbuild = "darwin-rebuild build --flake ~/nixconfig";
       nixupdate = "nix flake update --flake ~/nixconfig";
       nixdiff = "cd ~/nixconfig && nixbuild && nix store diff-closures /var/run/current-system ./result";
@@ -52,7 +52,8 @@
     '';
     # .zshrc
     # initExtraFirst = '''';
-    initExtraBeforeCompInit = ''
+    initContent = let
+      initExtraBeforeCompInit = lib.mkOrder 550 ''
       source "$ZINIT_HOME/zinit.zsh"
       zinit ice depth=1; zinit light romkatv/powerlevel10k
       # Add in zsh plugins
@@ -61,7 +62,7 @@
       zinit light zsh-users/zsh-autosuggestions
       zinit light Aloxaf/fzf-tab
     '';
-    initExtra = ''
+      zshConfig = lib.mkOrder 1000 ''
       zinit cdreplay -q
       # Add in snippets
       zinit snippet OMZP::git
@@ -94,6 +95,7 @@
       # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
       [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
     '';
+      in lib.mkMerge [ initExtraBeforeCompInit zshConfig ];
   };
   home.file.kube = {
     enable = true;
@@ -109,7 +111,6 @@
   programs.jq.enable = true;
   programs.lsd = {
     enable = true;
-    enableAliases = true;
   };
   programs.pandoc.enable = true;
   programs.zoxide.enable = true;
