@@ -96,8 +96,8 @@ restore_nix_configuration() {
 
 post_restore() {
     info "Post restore"
-    sudo wget --directory-prefix /Library/Keyboard\ Layouts https://raw.githubusercontent.com/Untersander/macos-us-altgr-intl/refs/heads/master/us-altgr-intl.keylayout
-    info "Applied US-intl-altgr Layout Reboot to activate
+    sudo wget --directory-prefix /Library/Keyboard\ Layouts https://raw.githubusercontent.com/Untersander/macos-us-altgr-intl/refs/heads/master/personal-us-intl-altgr-deadkeys.keylayout
+    info "Applied US-intl-altgr Layout Reboot to activate"
     completed "Post restore completed"
 
 }
