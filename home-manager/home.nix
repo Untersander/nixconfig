@@ -8,7 +8,7 @@ let
     /raycast/raycast.nix
     /ssh/ssh.nix
     /go.nix
-    /ollama.nix
+    # /ollama.nix
     /aws/aws.nix
   ];
 
