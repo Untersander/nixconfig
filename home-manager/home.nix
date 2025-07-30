@@ -45,6 +45,7 @@ in
       viddy # alternate watch command
       watch
       wget
+      yazi
       # Nix
       nil
       nixfmt-rfc-style

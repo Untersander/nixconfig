@@ -131,7 +131,6 @@
       "ripgrep-all"
       "sevenzip"
       "siderolabs/tap/talosctl"
-      "superfile"
       "syft"
       "telnet"
       "terraform"
