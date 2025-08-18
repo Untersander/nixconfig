@@ -41,6 +41,7 @@ in
       neofetch
       neovim
       nvd
+      restic
       tmux
       viddy # alternate watch command
       watch
