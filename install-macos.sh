@@ -72,9 +72,7 @@ install_homebrew() {
 
 install_nix() {
     info "Installing Nix"
-    curl -L https://github.com/DeterminateSystems/nix-installer/releases/download/v0.27.1/nix-installer-aarch64-darwin -o ~/nix-installer
-    chmod +x ~/nix-installer
-    sudo ~/nix-installer install
+    curl -fsSL https://install.determinate.systems/nix | sh -s -- install
     completed "Nix installed"
 
 }
