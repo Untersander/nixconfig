@@ -41,7 +41,7 @@
       # Homebrew
       eval "$(/opt/homebrew/bin/brew shellenv)"
       # Zinit
-      ZINIT_HOME="''${XDG_DATA_HOME:-''${HOME}/.local/share}/zinit/zinit.git"
+      export ZINIT_HOME="''${XDG_DATA_HOME:-''${HOME}/.local/share}/zinit/zinit.git"
       # Download zinit if necessary
       if [[ ! -d $ZINIT_HOME ]]; then
         mkdir -p "$(dirname $ZINIT_HOME)"
