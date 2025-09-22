@@ -8,8 +8,8 @@
     dotDir = ".config/zsh";
 
     shellAliases = {
-      switch = "sudo darwin-rebuild switch --flake ~/nixconfig";
-      check = "sudo darwin-rebuild check --flake ~/nixconfig";
+      switch = "sudo nix run nix-darwin -- switch --flake ~/nixconfig";
+      check = "sudo nix run darwin-rebuild check --flake ~/nixconfig";
       nixbuild = "darwin-rebuild build --flake ~/nixconfig";
       nixupdate = "nix flake update --flake ~/nixconfig";
       nixdiff = "cd ~/nixconfig && nixbuild && nix store diff-closures /var/run/current-system ./result";
