@@ -50,6 +50,7 @@
       "ukelele"
       "visual-studio-code"
       "vmware-fusion"
+      "webex"
       "whatsapp"
       "wireshark-app"
       "zed"
