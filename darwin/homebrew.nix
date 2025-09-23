@@ -8,6 +8,7 @@
     masApps = {
       "Windows App" = 1295203466;
       "Yubico Authenticator" = 1497506650;
+      "WireGuard" = 1451685025;
     };
     casks = [
       "1password"
