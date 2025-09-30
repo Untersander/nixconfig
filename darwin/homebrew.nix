@@ -48,6 +48,7 @@
       "threema"
       "typora"
       "ukelele"
+      "utm"
       "visual-studio-code"
       "vmware-fusion"
       "webex"
