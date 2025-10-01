@@ -179,9 +179,6 @@
         wvous-br-corner = 1; # Hot corner bottom right disabled
         orientation = "right";
         persistent-apps = [
-          "/Applications/iTerm2.app"
-          "/Applications/Brave Browser.app"
-          "/Applications/Visual Studio Code.app"
         ];
         scroll-to-open = true;
       };
