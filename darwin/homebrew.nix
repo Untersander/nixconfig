@@ -126,6 +126,7 @@
       "node"
       "opentofu"
       "pandoc"
+      "podman"
       "powershell/tap/powershell"
       "protobuf"
       "rdfind"
