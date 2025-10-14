@@ -10,6 +10,7 @@
     shellAliases = {
       switch = "sudo nix run nix-darwin -- switch --flake ~/nixconfig";
       check = "sudo nix run darwin-rebuild check --flake ~/nixconfig";
+      clab = "docker run --rm -it --privileged --network=host -v /var/run/docker.sock:/var/run/docker.sock -v /var/run/netns:/var/run/netns -v /etc/hosts:/etc/hosts -v /var/lib/docker/containers:/var/lib/docker/containers --pid=host -v $(pwd):$(pwd) -w $(pwd) ghcr.io/srl-labs/clab /usr/bin/containerlab";
       nixbuild = "darwin-rebuild build --flake ~/nixconfig";
       nixupdate = "nix flake update --flake ~/nixconfig";
       nixdiff = "cd ~/nixconfig && nixbuild && nix store diff-closures /var/run/current-system ./result";
