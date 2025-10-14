@@ -19,6 +19,7 @@
       "discord"
       "drawio"
       "firefox"
+      "google-chrome"
       "goreleaser/tap/goreleaser"
       "hoppscotch"
       "iina"
