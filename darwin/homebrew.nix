@@ -104,6 +104,7 @@
       "gdu"
       "gitleaks"
       "gnmic"
+      "go"
       "go-task/tap/go-task"
       "golangci-lint"
       "graphviz"
