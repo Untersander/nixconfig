@@ -25,9 +25,9 @@
       bash
       zsh
     ];
-    systemPackages = with pkgs; [
-      # raycast # Maybe save config to dotfiles
-    ];
+    # systemPackages = [
+      # pkgs.raycast # Maybe save config to dotfiles
+    # ];
     systemPath = [ "/opt/homebrew/bin" ];
     pathsToLink = [ "/Applications" ];
   };

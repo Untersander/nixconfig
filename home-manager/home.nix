@@ -42,7 +42,8 @@ in
       neofetch
       neovim
       nvd
-      restic
+      pkgs-unstable.restic
+      pkgs-unstable.resticprofile
       tmux
       viddy # alternate watch command
       watch
