@@ -46,7 +46,7 @@
       "slack"
       "syntax-highlight"
       "telegram-desktop"
-      "threema"
+      "threema@beta"
       "typora"
       "ukelele"
       "utm"
