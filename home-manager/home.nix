@@ -44,6 +44,7 @@ in
       nvd
       pkgs-unstable.restic
       pkgs-unstable.resticprofile
+      sshpass
       tmux
       viddy # alternate watch command
       watch
