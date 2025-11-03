@@ -4,7 +4,15 @@ version: "1"
 
 default:
   backup:
+    host: "Worker"
     verbose: true
     source:
       - "$HOME/github"
       - "$HOME/gitlab"
+  forget:
+    # dry-run: true
+    keep-last: 5
+    keep-daily: 7
+    keep-weekly: 4
+    keep-monthly: "unlimited"
+    keep-yearly: "unlimited"
