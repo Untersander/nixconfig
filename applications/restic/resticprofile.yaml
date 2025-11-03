@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://creativeprojects.github.io/resticprofile/jsonschema/config.json
+
+version: "1"
+
+default:
+  backup:
+    verbose: true
+    source:
+      - "$HOME/github"
+      - "$HOME/gitlab"

@@ -53,24 +53,25 @@
       # UV tools (python tools)
       export PATH="''$PATH:''$HOME/.local/bin"
       # Expand alias
-      globalias() {
-        zle _expand_alias
-        zle expand-word
-        zle self-insert
-      }
-      zle -N globalias
-      # space expands all aliases, including global
-      bindkey -M viins " " globalias
-      # control-space to make a normal space
-      bindkey -M viins "^ " magic-space
-      # normal space during searches
-      bindkey -M isearch " " magic-space
+      # globalias() {
+      #   zle _expand_alias
+      #   zle expand-word
+      #   zle self-insert
+      # }
+      # zle -N globalias
+      # # space expands all aliases
+      # bindkey -M viins " " _expand_alias
+      # # control-space to make a normal space
+      # bindkey -M viins "^ " magic-space
+      # # normal space during searches
+      # bindkey -M isearch " " magic-space
       # Useful keybinds for vimode
       bindkey '^r' history-incremental-search-backward
       bindkey '^a' beginning-of-line
       bindkey '^e' end-of-line
       bindkey '^[b' vi-backward-blank-word
       bindkey '^[w' vi-forward-blank-word
+      bindkey -M viins '^f' vi-forward-word
       # Also fix annoying vi backspace
       bindkey '^?' backward-delete-char
     '';

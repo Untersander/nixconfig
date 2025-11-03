@@ -10,6 +10,7 @@ let
     /go.nix
     # /ollama.nix
     /aws/aws.nix
+    /restic/restic.nix
   ];
 
 in
