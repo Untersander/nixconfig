@@ -6,10 +6,11 @@
     enableCompletion = true;
     syntaxHighlighting.enable = true;
     dotDir = ".config/zsh";
+    defaultKeymap = "viins";
 
     shellAliases = {
-      switch = "sudo nix run nix-darwin -- switch --flake ~/nixconfig";
-      check = "sudo nix run darwin-rebuild check --flake ~/nixconfig";
+      switch = "sudo -H nix run nix-darwin -- switch --flake ~/nixconfig";
+      check = "sudo -H nix run darwin-rebuild check --flake ~/nixconfig";
       clab = "docker run --rm -it --privileged --network=host -v /var/run/docker.sock:/var/run/docker.sock -v /var/run/netns:/var/run/netns -v /etc/hosts:/etc/hosts -v /var/lib/docker/containers:/var/lib/docker/containers --pid=host -v $(pwd):$(pwd) -w $(pwd) ghcr.io/srl-labs/clab /usr/bin/containerlab";
       nixbuild = "darwin-rebuild build --flake ~/nixconfig";
       nixupdate = "nix flake update --flake ~/nixconfig";
@@ -30,6 +31,7 @@
       activate = "source .venv/bin/activate";
       python = "python3";
       py = "python3";
+      r = "fc -e -";
     };
     history = {
       ignoreSpace = true;
@@ -50,6 +52,27 @@
       fi
       # UV tools (python tools)
       export PATH="''$PATH:''$HOME/.local/bin"
+      # Expand alias
+      globalias() {
+        zle _expand_alias
+        zle expand-word
+        zle self-insert
+      }
+      zle -N globalias
+      # space expands all aliases, including global
+      bindkey -M viins " " globalias
+      # control-space to make a normal space
+      bindkey -M viins "^ " magic-space
+      # normal space during searches
+      bindkey -M isearch " " magic-space
+      # Useful keybinds for vimode
+      bindkey '^r' history-incremental-search-backward
+      bindkey '^a' beginning-of-line
+      bindkey '^e' end-of-line
+      bindkey '^[b' vi-backward-blank-word
+      bindkey '^[w' vi-forward-blank-word
+      # Also fix annoying vi backspace
+      bindkey '^?' backward-delete-char
     '';
     # .zshrc
     # initExtraFirst = '''';
