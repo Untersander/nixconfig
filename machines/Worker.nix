@@ -130,6 +130,141 @@
           # Enables Keyboard Input Menu Switcher
           visible = 1;
         };
+        # "com.apple.LaunchServices/com.apple.launchservices.secure" = {
+        #   # Alternative way to Handle default applications for file extensions, maybe checkout duti (https://github.com/moretension/duti) or utiluti (https://github.com/scriptingosx/utiluti).
+        #   LSHandlers = [
+        #         {
+        #     LSHandlerContentType = "com.apple.default-app.web-browser";
+        #     LSHandlerPreferredVersions =             {
+        #         LSHandlerRoleAll = "-";
+        #     };
+        #     LSHandlerRoleAll = "com.brave.browser";
+        # }
+        #         {
+        #     LSHandlerPreferredVersions =             {
+        #         LSHandlerRoleAll = "-";
+        #     };
+        #     LSHandlerRoleAll = "com.valvesoftware.steam";
+        #     LSHandlerURLScheme = "steam";
+        # }
+        #         {
+        #     LSHandlerPreferredVersions =             {
+        #         LSHandlerRoleAll = "-";
+        #     };
+        #     LSHandlerRoleAll = "com.valvesoftware.steam";
+        #     LSHandlerURLScheme = "steamlink";
+        # }
+        #         {
+        #     LSHandlerPreferredVersions =             {
+        #         LSHandlerRoleAll = "-";
+        #     };
+        #     LSHandlerRoleAll = "com.brave.browser";
+        #     LSHandlerURLScheme = "https";
+        # }
+        #         {
+        #     LSHandlerPreferredVersions =             {
+        #         LSHandlerRoleAll = "-";
+        #     };
+        #     LSHandlerRoleAll = "io.podmandesktop.podmandesktop";
+        #     LSHandlerURLScheme = "podman-desktop";
+        # }
+        #         {
+        #     LSHandlerPreferredVersions =             {
+        #         LSHandlerRoleAll = "-";
+        #     };
+        #     LSHandlerRoleAll = "com.tdesktop.telegram";
+        #     LSHandlerURLScheme = "tg";
+        # }
+        #         {
+        #     LSHandlerPreferredVersions =             {
+        #         LSHandlerRoleAll = "-";
+        #     };
+        #     LSHandlerRoleAll = "com.tdesktop.telegram";
+        #     LSHandlerURLScheme = "tonsite";
+        # }
+        #         {
+        #     LSHandlerContentType = "io.iina.mkv";
+        #     LSHandlerPreferredVersions =             {
+        #         LSHandlerRoleAll = "-";
+        #     };
+        #     LSHandlerRoleAll = "com.colliderli.iina";
+        # }
+        #         {
+        #     LSHandlerContentType = "com.apple.ical.backup-package";
+        #     LSHandlerPreferredVersions =             {
+        #         LSHandlerRoleAll = "-";
+        #     };
+        #     LSHandlerRoleAll = "com.apple.ical";
+        # }
+        #         {
+        #     LSHandlerPreferredVersions =             {
+        #         LSHandlerRoleAll = "-";
+        #     };
+        #     LSHandlerRoleAll = "org.whispersystems.signal-desktop";
+        #     LSHandlerURLScheme = "sgnl";
+        # }
+        #         {
+        #     LSHandlerContentType = "com.apple.ical.ics";
+        #     LSHandlerPreferredVersions =             {
+        #         LSHandlerRoleAll = "-";
+        #     };
+        #     LSHandlerRoleAll = "com.microsoft.outlook";
+        # }
+        #         {
+        #     LSHandlerPreferredVersions =             {
+        #         LSHandlerRoleAll = "-";
+        #     };
+        #     LSHandlerRoleAll = "org.whispersystems.signal-desktop";
+        #     LSHandlerURLScheme = "signalcaptcha";
+        # }
+        #         {
+        #     LSHandlerContentType = "public.html";
+        #     LSHandlerPreferredVersions =             {
+        #         LSHandlerRoleAll = "-";
+        #     };
+        #     LSHandlerRoleAll = "com.brave.browser";
+        # }
+        #         {
+        #     LSHandlerPreferredVersions =             {
+        #         LSHandlerRoleAll = "-";
+        #     };
+        #     LSHandlerRoleAll = "com.tinyspeck.slackmacgap";
+        #     LSHandlerURLScheme = "slack";
+        # }
+        #         {
+        #     LSHandlerPreferredVersions =             {
+        #         LSHandlerRoleAll = "-";
+        #     };
+        #     LSHandlerRoleAll = "com.googlecode.iterm2";
+        #     LSHandlerURLScheme = "iterm2";
+        # }
+        #         {
+        #     LSHandlerContentType = "com.apple.quicktime-movie";
+        #     LSHandlerPreferredVersions =             {
+        #         LSHandlerRoleAll = "-";
+        #     };
+        #     LSHandlerRoleAll = "com.colliderli.iina";
+        # }
+        #         {
+        #     LSHandlerPreferredVersions =             {
+        #         LSHandlerRoleAll = "-";
+        #     };
+        #     LSHandlerRoleAll = "com.brave.browser";
+        #     LSHandlerURLScheme = "http";
+        # }
+        #         {
+        #     LSHandlerContentType = "public.mpeg-4";
+        #     LSHandlerPreferredVersions =             {
+        #         LSHandlerRoleAll = "-";
+        #     };
+        #     LSHandlerRoleAll = "com.colliderli.iina";
+        # }
+        #     {
+        #       LSHandlerContentType= "public.plain-text";
+        #       LSHandlerRoleAll="com.microsoft.VSCode";
+        #     }
+        #   ];
+        # };
         # Specify the iterm preferences directory
         "com.googlecode.iterm2" = {
           PrefsCustomFolder = "~/nixconfig/applications/iTerm2/";
