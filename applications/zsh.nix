@@ -53,6 +53,8 @@
       fi
       # UV tools (python tools)
       export PATH="''$PATH:''$HOME/.local/bin"
+      # Rust tools
+      export PATH="''$PATH:''$HOME/.cargo/bin"
       # Expand alias
       # globalias() {
       #   zle _expand_alias

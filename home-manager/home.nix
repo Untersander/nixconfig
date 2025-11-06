@@ -72,6 +72,9 @@ in
       pkgs-unstable.kustomize
       pkgs-unstable.operator-sdk
       pkgs-unstable.stern
+      # Coding
+      gnumake
+      rustup
     ];
   };
 

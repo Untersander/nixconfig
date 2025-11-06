@@ -6,3 +6,10 @@ Host *
 Host *.ins.work
 	HostKeyAlgorithms +ssh-rsa
 	KexAlgorithms +diffie-hellman-group14-sha1
+
+Host 10.8.34.*
+	StrictHostKeyChecking no
+	UserKnownHostsFile /dev/null
+Host *.network.garden
+	StrictHostKeyChecking no
+	UserKnownHostsFile /dev/null
