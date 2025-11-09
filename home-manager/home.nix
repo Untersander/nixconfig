@@ -41,7 +41,6 @@ in
       git
       htop
       neofetch
-      neovim
       nvd
       pkgs-unstable.restic
       pkgs-unstable.resticprofile
@@ -78,15 +77,21 @@ in
     ];
   };
 
-  # Let Home Manager install and manage itself.
   programs = {
-    home-manager.enable = true;
+    neovim = {
+      enable = true;
+      viAlias = true;
+      vimAlias = true;
+    };
     nix-index = {
       # comma dependency
       enable = true;
       enableZshIntegration = true;
     };
   };
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
