@@ -115,7 +115,6 @@
           kubeconfig=$kubeconfig:''$kconfig
         fi
       done
-      export KUBECONFIG=''$kubeconfig
       kubectl config view --flatten > ''$HOME/.kube/config
       export PATH="''${KREW_ROOT:-''$HOME/.krew}/bin:''$PATH"
       # Golang
