@@ -109,14 +109,14 @@
       eval "$(zoxide init --cmd cd zsh)"
       # Kubernetes
       kubeconfig=' '
-      cp ''$HOME/.kube/config ''$HOME/.kube/current.config
       for kconfig in ''$HOME/.kube ''$(find ''$HOME/.kube -iname "*.config")
       do
         if [ -f "''$kconfig" ];then
           kubeconfig=''$kconfig:''$kubeconfig
         fi
       done
-      export KUBECONFIG=''$HOME/.kube/config:''$kubeconfig
+      cp ''$HOME/.kube/config ''$HOME/.kube/config.bak
+      export KUBECONFIG=''$kubeconfig:''$HOME/.kube/config.bak
       kubectl config view --flatten > ''$HOME/.kube/config
       # export KUBECONFIG=''$HOME/.kube/config
       export PATH="''${KREW_ROOT:-''$HOME/.krew}/bin:''$PATH"
