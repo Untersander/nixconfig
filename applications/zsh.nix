@@ -108,17 +108,17 @@
       eval "$(fzf --zsh)"
       eval "$(zoxide init --cmd cd zsh)"
       # Kubernetes
-      kubeconfig=' '
-      for kconfig in ''$HOME/.kube ''$(find ''$HOME/.kube -iname "*.config")
+      unset kubeconfig
+      for kconfig in $HOME/.kube $(find $HOME/.kube -iname "*.config")
       do
-        if [ -f "''$kconfig" ];then
-          kubeconfig=''$kconfig:''$kubeconfig
+        if [ -f "$kconfig" ];then
+          kubeconfig=$kconfig:$kubeconfig
         fi
       done
-      cp ''$HOME/.kube/config ''$HOME/.kube/config.bak
-      export KUBECONFIG=''$kubeconfig:''$HOME/.kube/config.bak
-      kubectl config view --flatten > ''$HOME/.kube/config
-      export KUBECONFIG=''$HOME/.kube/config
+      cp $HOME/.kube/config $HOME/.kube/config.bak
+      export KUBECONFIG=$kubeconfig$HOME/.kube/config.bak
+      kubectl config view --flatten > $HOME/.kube/config
+      export KUBECONFIG=$HOME/.kube/config
       export PATH="''${KREW_ROOT:-''$HOME/.krew}/bin:''$PATH"
       # Golang
       export PATH="''$PATH:''$GOBIN"
