@@ -118,7 +118,7 @@
       cp ''$HOME/.kube/config ''$HOME/.kube/config.bak
       export KUBECONFIG=''$kubeconfig:''$HOME/.kube/config.bak
       kubectl config view --flatten > ''$HOME/.kube/config
-      # export KUBECONFIG=''$HOME/.kube/config
+      export KUBECONFIG=''$HOME/.kube/config
       export PATH="''${KREW_ROOT:-''$HOME/.krew}/bin:''$PATH"
       # Golang
       export PATH="''$PATH:''$GOBIN"

@@ -284,6 +284,7 @@
         KeyRepeat = 2;
         "com.apple.keyboard.fnState" = true;
         NSAutomaticSpellingCorrectionEnabled = false;
+        NSAutomaticWindowAnimationsEnabled = false;
         NSWindowShouldDragOnGesture = true;
         NSNavPanelExpandedStateForSaveMode = true;
         NSDocumentSaveNewDocumentsToCloud = false;
