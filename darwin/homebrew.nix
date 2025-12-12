@@ -40,6 +40,7 @@
       "onedrive"
       "orbstack"
       "podman-desktop"
+      "powershell"
       "qlmarkdown"
       "raycast"
       "signal"
@@ -79,7 +80,6 @@
       "goreleaser/tap"
       "hashicorp/tap"
       "nikitabobko/tap"
-      "powershell/tap"
       "rest-sh/tap"
       "siderolabs/tap"
     ];
@@ -129,7 +129,6 @@
       "opentofu"
       "pandoc"
       "podman"
-      "powershell/tap/powershell"
       "protobuf"
       "rdfind"
       "rest-sh/tap/restish"

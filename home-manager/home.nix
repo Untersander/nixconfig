@@ -42,8 +42,8 @@ in
       htop
       neofetch
       nvd
-      pkgs-unstable.restic
-      pkgs-unstable.resticprofile
+      restic
+      resticprofile
       sshpass
       tmux
       viddy # alternate watch command
@@ -74,6 +74,7 @@ in
       # Coding
       gnumake
       rustup
+      shellcheck
     ];
   };
 

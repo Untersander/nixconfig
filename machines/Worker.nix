@@ -323,21 +323,21 @@
         BatteryShowPercentage = true;
         Bluetooth = true;
       };
-      alf = {
-        globalstate = 1;
-      };
+      # alf = {
+      #   globalstate = 1;
+      # };
     };
   };
 
   # will deprecate system.alf.globalstate in 25.11 release
-  # networking = {
-  #   # Enable the firewall
-  #   applicationFirewall = {
-  #     enable = true;
-  #     enableStealthMode = true;
-  #     blockAllIncoming = true;
-  #   };
-  # };
+  networking = {
+    # Enable the firewall
+    applicationFirewall = {
+      enable = true;
+      enableStealthMode = true;
+      blockAllIncoming = true;
+    };
+  };
 
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";

@@ -1,11 +1,11 @@
-{ lib, ... }:
+{ lib, config, ... }:
 {
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
-    dotDir = ".config/zsh";
+    dotDir = config.xdg.configHome;
     defaultKeymap = "viins";
 
     shellAliases = {
@@ -80,52 +80,57 @@
     '';
     # .zshrc
     # initExtraFirst = '''';
-    initContent = let
-      initExtraBeforeCompInit = lib.mkOrder 550 ''
-      source "$ZINIT_HOME/zinit.zsh"
-      zinit ice depth=1; zinit light romkatv/powerlevel10k
-      # Add in zsh plugins
-      zinit light zsh-users/zsh-syntax-highlighting
-      zinit light zsh-users/zsh-completions
-      zinit light zsh-users/zsh-autosuggestions
-      zinit light Aloxaf/fzf-tab
-    '';
-      zshConfig = lib.mkOrder 1000 ''
-      zinit cdreplay -q
-      # Add in snippets
-      zinit snippet OMZP::git
-      zinit snippet OMZP::sudo
-      zinit snippet OMZP::kubectl
-      zinit snippet OMZP::kubectx
-      zinit snippet OMZP::terraform
-      # Completion styling
-      zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-      zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
-      zstyle ':completion:*' menu no
-      zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-      zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
-      # Shell integrations
-      eval "$(fzf --zsh)"
-      eval "$(zoxide init --cmd cd zsh)"
-      # Kubernetes
-      unset kubeconfig
-      for kconfig in $HOME/.kube $(find $HOME/.kube -iname "*.config")
-      do
-        if [ -f "$kconfig" ];then
-          kubeconfig=$kconfig:$kubeconfig
-        fi
-      done
-      cp $HOME/.kube/config $HOME/.kube/config.bak
-      export KUBECONFIG=$kubeconfig$HOME/.kube/config.bak
-      kubectl config view --flatten > $HOME/.kube/config
-      export KUBECONFIG=$HOME/.kube/config
-      export PATH="''${KREW_ROOT:-''$HOME/.krew}/bin:''$PATH"
-      # Golang
-      export PATH="''$PATH:''$GOBIN"
-      # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-      [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
-    '';
-      in lib.mkMerge [ initExtraBeforeCompInit zshConfig ];
+    initContent =
+      let
+        initExtraBeforeCompInit = lib.mkOrder 550 ''
+          source "$ZINIT_HOME/zinit.zsh"
+          zinit ice depth=1; zinit light romkatv/powerlevel10k
+          # Add in zsh plugins
+          zinit light zsh-users/zsh-syntax-highlighting
+          zinit light zsh-users/zsh-completions
+          zinit light zsh-users/zsh-autosuggestions
+          zinit light Aloxaf/fzf-tab
+        '';
+        zshConfig = lib.mkOrder 1000 ''
+          zinit cdreplay -q
+          # Add in snippets
+          zinit snippet OMZP::git
+          zinit snippet OMZP::sudo
+          zinit snippet OMZP::kubectl
+          zinit snippet OMZP::kubectx
+          zinit snippet OMZP::terraform
+          # Completion styling
+          zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+          zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
+          zstyle ':completion:*' menu no
+          zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+          zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+          # Shell integrations
+          eval "$(fzf --zsh)"
+          eval "$(zoxide init --cmd cd zsh)"
+          # Kubernetes
+          unset kubeconfig
+          for kconfig in $HOME/.kube $(find $HOME/.kube -iname "*.config")
+          do
+            if [ -f "$kconfig" ];then
+              kubeconfig=$kconfig:$kubeconfig
+            fi
+          done
+          cp $HOME/.kube/config $HOME/.kube/config.bak
+          export KUBECONFIG=$kubeconfig$HOME/.kube/config.bak
+          kubectl config view --flatten > $HOME/.kube/config
+          export KUBECONFIG=$HOME/.kube/config
+          export PATH="''${KREW_ROOT:-''$HOME/.krew}/bin:''$PATH"
+          # Golang
+          export PATH="''$PATH:''$GOBIN"
+          # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+          [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+        '';
+      in
+      lib.mkMerge [
+        initExtraBeforeCompInit
+        zshConfig
+      ];
   };
   home.file.kube = {
     enable = true;
