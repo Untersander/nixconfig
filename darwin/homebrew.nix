@@ -131,7 +131,7 @@
       "podman"
       "protobuf"
       "rdfind"
-      "rest-sh/tap/restish"
+      # "rest-sh/tap/restish"
       "ripgrep"
       "ripgrep-all"
       "sevenzip"
