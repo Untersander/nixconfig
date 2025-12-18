@@ -62,13 +62,9 @@ in
       # fame = "python3.exe -m gitfame";
     };
 
+    userEmail = "jan.untersander@ost.ch";
+    userName = "Jan Untersander";
     settings = {
-      userEmail = {
-        jan = "jan.untersander@ost.ch";
-      };
-      userName = {
-        jan = "Jan Untersander";
-      };
       init = {
         defaultBranch = "main";
       };
