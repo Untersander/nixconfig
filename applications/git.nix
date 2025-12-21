@@ -62,9 +62,12 @@ in
       # fame = "python3.exe -m gitfame";
     };
 
-    userEmail = "jan.untersander@ost.ch";
-    userName = "Jan Untersander";
     settings = {
+      user = {
+        email = "jan.untersander@ost.ch";
+        name = "Jan Untersander";
+        signingkey = publicKey;
+      };
       init = {
         defaultBranch = "main";
       };
@@ -73,7 +76,6 @@ in
       fetch.pruen = true;
       help.autocorrect = 30;
       commit.gpgsign = true;
-      user.signingkey = publicKey;
       "gpg \"ssh\"".program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
       gpg = {
         format = "ssh";
