@@ -40,6 +40,7 @@ in
       gdu
       git
       htop
+      jujutsu
       neofetch
       nvd
       restic
