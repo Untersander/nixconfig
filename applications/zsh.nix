@@ -5,7 +5,7 @@
     autosuggestion.enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
-    dotDir = config.xdg.configHome;
+    dotDir = config.xdg.configHome + "/zsh";
     defaultKeymap = "viins";
 
     shellAliases = {
