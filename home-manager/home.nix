@@ -37,23 +37,27 @@ in
       bat
       btop
       comma # nix-shell wrapper
-      gdu
+      gdu # graphic du
       git
       htop
+      hygg # nice file reader for pdf's etc.
       jujutsu
       neofetch
-      nvd
       restic
       resticprofile
+      # smassh # monkeytype like
       sshpass
+      tlrc
       tmux
       viddy # alternate watch command
       watch
       wget
-      yazi
+      yazi # file-browser
       # Nix
-      nil
+      nil # lsp
       nixfmt-rfc-style
+      nvd # package version diff tool
+      niv # dependency manager for Nix projects
       # Desktop apps
       # vscode
       # obsidian
@@ -63,7 +67,6 @@ in
       # Devops
       devbox
       gh
-      niv
       # K8s
       pkgs-unstable.kind
       pkgs-unstable.krew

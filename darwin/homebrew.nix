@@ -122,9 +122,9 @@
       "kubent"
       "mas"
       "mtr"
-      "ncdu"
+      "ncdu" # graphic du
       "nmap"
-      "nnn"
+      "nnn" # terminal file browser
       "node"
       "opentofu"
       "pandoc"
@@ -143,7 +143,6 @@
       "terragrunt"
       "tfmigrate"
       "tio"
-      "tldr"
       "tree"
       "trivy"
       "typst"
