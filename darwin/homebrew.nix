@@ -34,6 +34,7 @@
       "microsoft-powerpoint"
       "microsoft-teams"
       "microsoft-word"
+      "nextcloud-vfs"
       "nikitabobko/tap/aerospace"
       "obs"
       "obsidian"

@@ -120,9 +120,9 @@
           export KUBECONFIG=$kubeconfig$HOME/.kube/config.bak
           kubectl config view --flatten > $HOME/.kube/config
           export KUBECONFIG=$HOME/.kube/config
-          export PATH="''${KREW_ROOT:-''$HOME/.krew}/bin:''$PATH"
+          export PATH="''${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
           # Golang
-          export PATH="''$PATH:''$GOBIN"
+          export PATH="$PATH:$GOBIN"
           # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
           [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
         '';
