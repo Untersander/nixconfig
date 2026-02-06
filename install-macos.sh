@@ -87,7 +87,7 @@ installation() {
 restore_nix_configuration() {
     confirm "Do you want to restore Nix configuration?"
     info "Restoring Nix configuration"
-    nix run nix-darwin -- switch --flake ~/nixconfig
+    sudo -H nix run nix-darwin -- switch --flake ~/nixconfig
     completed "Nix configuration restored"
     post_restore
 }
