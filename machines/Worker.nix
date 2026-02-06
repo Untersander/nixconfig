@@ -15,6 +15,16 @@
     config.allowUnfree = true;
   };
 
+  nixpkgs.overlays = [ (final: prev: {
+    inherit (prev.lixPackageSets.stable)
+      nixpkgs-review
+      nix-eval-jobs
+      nix-fast-build
+      colmena;
+  }) ];
+
+  nix.package = pkgs.lixPackageSets.stable.lix;
+
   # Security settings
   security.pam.services.sudo_local.touchIdAuth = true;
 
