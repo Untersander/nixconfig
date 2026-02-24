@@ -40,7 +40,7 @@ in
       gdu # graphic du
       git
       htop
-      hygg # nice file reader for pdf's etc.
+      # hygg # nice file reader for pdf's etc.
       jujutsu
       neofetch
       restic
