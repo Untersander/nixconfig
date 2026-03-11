@@ -14,5 +14,8 @@ default:
     keep-last: 5
     keep-daily: 7
     keep-weekly: 4
+    # disable yaml-language-server validation for these values (restic accepts "unlimited")
+    # yaml-language-server-disable Incorrect type
     keep-monthly: "unlimited"
+    # yaml-language-server-disable Incorrect type
     keep-yearly: "unlimited"
