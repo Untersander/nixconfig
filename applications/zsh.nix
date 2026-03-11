@@ -130,7 +130,7 @@
           kubectl config view --flatten > $HOME/.kube/config
           export KUBECONFIG=$HOME/.kube/config
           if [ -n "$current_context" ]; then
-            kubectl config use-context "$current_context" 2>/dev/null
+            kubectl config use-context "$current_context" &>/dev/null
           fi
           export PATH="''${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
           # Golang

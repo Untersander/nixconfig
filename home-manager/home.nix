@@ -63,6 +63,7 @@ in
       # obsidian
       # mpv
       # Tex
+      pympress
       texliveFull
       # Devops
       devbox
