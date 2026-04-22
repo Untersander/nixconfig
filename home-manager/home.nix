@@ -11,6 +11,7 @@ let
     # /ollama.nix
     /aws/aws.nix
     /restic/restic.nix
+    /yazi/yazi.nix
   ];
 
 in
@@ -45,14 +46,16 @@ in
       neofetch
       restic
       resticprofile
+      skopeo
       # smassh # monkeytype like
       sshpass
       tlrc
       tmux
+      ueberzugpp # allowes drawing images in terminal
       viddy # alternate watch command
       watch
       wget
-      yazi # file-browser
+      pkgs-unstable.yazi # file-browser
       # Nix
       nil # lsp
       nixfmt-rfc-style
@@ -65,6 +68,7 @@ in
       # Tex
       pympress
       texliveFull
+      wireshark
       # Devops
       devbox
       gh
