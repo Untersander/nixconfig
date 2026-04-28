@@ -3,19 +3,28 @@
 version: "1"
 
 default:
+  run-before:
+    - echo AWS_ACCESS_KEY_ID="$(op read 'op://Private/Backblaze B2 backup-my-cloud/keyID')" >> "{{env}}"
+    - echo AWS_SECRET_ACCESS_KEY="$(op read 'op://Private/Backblaze B2 backup-my-cloud/credential')" >> "{{env}}"
+    - echo RESTIC_REPOSITORY="s3:$(op read 'op://Private/Backblaze B2 backup-my-cloud/s3-endpoint')" >> "{{env}}"
+    - echo RESTIC_PASSWORD="$(op read 'op://Private/Backblaze B2 backup-my-cloud/restic-password')" >> "{{env}}"
   backup:
+    run-before: "echo \"restic debug repository $RESTIC_REPOSITORY\""
     host: "Worker"
     verbose: true
+    # schedule: "*-*-* 06:00:00"
     source:
       - "$HOME/github"
       - "$HOME/gitlab"
   forget:
     # dry-run: true
-    keep-last: 5
+    prune: true
+    # schedule: "*-*-* 07:00:00"
+    keep-last: 1
     keep-daily: 7
     keep-weekly: 4
     # disable yaml-language-server validation for these values (restic accepts "unlimited")
     # yaml-language-server-disable Incorrect type
-    keep-monthly: "unlimited"
+    keep-monthly: 12
     # yaml-language-server-disable Incorrect type
     keep-yearly: "unlimited"

@@ -32,7 +32,6 @@
       python = "python3";
       py = "python3";
       r = "fc -e -";
-      resticsource = "source ~/nixconfig/applications/restic/restic.env";
     };
     history = {
       ignoreSpace = true;
