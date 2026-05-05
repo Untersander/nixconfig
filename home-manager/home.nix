@@ -80,6 +80,7 @@ in
       pkgs-unstable.kustomize
       pkgs-unstable.operator-sdk
       pkgs-unstable.stern
+      pkgs-unstable.velero
       # Coding
       gnumake
       rustup
