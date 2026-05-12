@@ -32,13 +32,15 @@
       python = "python3";
       py = "python3";
       r = "fc -e -";
+      opagb = "op run --env-file ~/nixconfig/applications/aws/garage-backup-key.env -- aws";
     };
     history = {
       ignoreSpace = true;
       ignoreAllDups = true;
     };
     # .zshenv
-    # envExtra = '''';
+    # envExtra = ''
+    # '';
     # .zprofile
     profileExtra = ''
       # Homebrew

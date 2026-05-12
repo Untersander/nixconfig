@@ -72,6 +72,7 @@ in
       # Devops
       devbox
       gh
+      pkgs-unstable.awscli2
       # K8s
       pkgs-unstable.kind
       pkgs-unstable.krew
