@@ -53,7 +53,6 @@
       "ukelele"
       "utm"
       "visual-studio-code"
-      "vmware-fusion"
       "webex"
       "whatsapp"
       "zed"
