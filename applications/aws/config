@@ -1,1 +1,3 @@
 [default]
+region = garage
+endpoint_url = https://s3.k8s.garden
