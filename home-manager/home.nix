@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, pkgs-oldstable, pkgs-unstable, ... }:
 let
   imports = map (x: ../applications + x) [
     /git.nix
@@ -43,13 +43,12 @@ in
       htop
       # hygg # nice file reader for pdf's etc.
       jujutsu
-      neofetch
       restic
-      resticprofile
+      pkgs-oldstable.resticprofile
       skopeo
       # smassh # monkeytype like
       sshpass
-      tlrc
+      tlrc # tldr
       tmux
       ueberzugpp # allowes drawing images in terminal
       viddy # alternate watch command
@@ -57,8 +56,8 @@ in
       wget
       pkgs-unstable.yazi # file-browser
       # Nix
-      nil # lsp
-      nixfmt-rfc-style
+      nixd # lsp
+      nixfmt
       nvd # package version diff tool
       niv # dependency manager for Nix projects
       # Desktop apps
@@ -94,6 +93,9 @@ in
       enable = true;
       viAlias = true;
       vimAlias = true;
+      initLua = ''
+        vim.opt.clipboard:append({'unnamedplus'})
+      '';
     };
     nix-index = {
       # comma dependency
@@ -113,5 +115,5 @@ in
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "24.05";
+  home.stateVersion = "26.05";
 }

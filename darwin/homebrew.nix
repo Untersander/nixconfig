@@ -5,6 +5,9 @@
     caskArgs.no_quarantine = true;
     global.brewfile = true;
     onActivation.cleanup = "zap";
+    onActivation.extraFlags = [
+      "--force-cleanup"
+    ];
     masApps = {
       "Windows App" = 1295203466;
       "Yubico Authenticator" = 1497506650;
@@ -25,6 +28,7 @@
       "iina"
       "iterm2"
       "keycastr"
+      "kopiaui"
       "losslesscut"
       "mac-mouse-fix"
       "mactex"
@@ -119,6 +123,7 @@
       "istioctl"
       "k9s"
       "ko"
+      "kopia"
       "kompose"
       "kubent"
       "mas"

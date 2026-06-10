@@ -2,16 +2,17 @@
   description = "My system configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-25.11-darwin";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-26.05-darwin";
+    nixpkgs-oldstable.url = "github:NixOS/nixpkgs/nixpkgs-25.11-darwin";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin = {
       # url = "github:nix-darwin/nix-darwin/master";
-      url = "github:nix-darwin/nix-darwin/nix-darwin-25.11";
+      url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
       # inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";
     };
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -21,6 +22,7 @@
       self,
       nix-darwin,
       nixpkgs,
+      nixpkgs-oldstable,
       nixpkgs-unstable,
       home-manager,
     }:
@@ -29,6 +31,7 @@
         let
           system = "aarch64-darwin";
           pkgs = import inputs.nixpkgs { inherit system; };
+          pkgs-oldstable = import inputs.nixpkgs-oldstable { inherit system; };
           pkgs-unstable = import inputs.nixpkgs-unstable { inherit system; };
         in
         {
@@ -46,7 +49,7 @@
                   users.jan.imports = [
                     ./home-manager/home.nix
                   ];
-                  extraSpecialArgs = { inherit pkgs pkgs-unstable; };
+                  extraSpecialArgs = { inherit pkgs pkgs-oldstable pkgs-unstable; };
                 };
               }
             ];
