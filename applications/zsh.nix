@@ -117,22 +117,53 @@
           # Shell integrations
           eval "$(fzf --zsh)"
           eval "$(zoxide init --cmd cd zsh)"
-          # Kubernetes
-          unset kubeconfig
-          for kconfig in $HOME/.kube $(find $HOME/.kube -iname "*.config")
-          do
-            if [ -f "$kconfig" ];then
-              kubeconfig=$kconfig:$kubeconfig
+          # Kubernetes TODO export
+          refresh_kubeconfig() {
+            if ! command -v kubectl >/dev/null 2>&1; then
+              print -u2 "refresh_kubeconfig: kubectl is not available"
+              return 1
             fi
-          done
-          cp $HOME/.kube/config $HOME/.kube/config.bak
-          current_context=$(kubectl config current-context 2>/dev/null)
-          export KUBECONFIG=$kubeconfig$HOME/.kube/config.bak
-          kubectl config view --flatten > $HOME/.kube/config
-          export KUBECONFIG=$HOME/.kube/config
-          if [ -n "$current_context" ]; then
-            kubectl config use-context "$current_context" &>/dev/null
-          fi
+
+            if [[ ! -d $HOME/.kube ]]; then
+              mkdir -p "$HOME/.kube" || return 1
+            fi
+
+            local current_config="$HOME/.kube/config"
+            local current_context=""
+            local current_namespace=""
+            local kubeconfig_sources=""
+            local kconfig
+
+            if [[ -f "$current_config" ]]; then
+              current_context=$(kubectl config current-context 2>/dev/null || true)
+              current_namespace=$(kubectl config view --minify --output 'jsonpath={..namespace}' 2>/dev/null || true)
+              kubeconfig_sources="$current_config"
+            fi
+
+            for kconfig in $HOME/.kube $(find $HOME/.kube -iname "*.config")
+            do
+              if [ -f "$kconfig" ];then
+                kubeconfig_sources=$kconfig:$kubeconfig_sources
+              fi
+            done
+
+            if [[ -z "$kubeconfig_sources" ]]; then
+              print -u2 "refresh_kubeconfig: no kubeconfig fragments found under $HOME/.kube"
+              return 1
+            fi
+
+            export KUBECONFIG=$kubeconfig_sources
+            kubectl config view --flatten > "$current_config"
+            export KUBECONFIG="$current_config"
+
+            if [[ -n "$current_context" ]]; then
+              kubectl config use-context "$current_context" >/dev/null 2>&1 || true
+            fi
+
+            if [[ -n "$current_namespace" ]]; then
+              kubectl config set-context --current --namespace="$current_namespace" >/dev/null 2>&1 || true
+            fi
+          }
           export PATH="''${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
           # Golang
           export PATH="$PATH:$GOBIN"
