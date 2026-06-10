@@ -78,6 +78,7 @@ in
       pkgs-unstable.kubectl
       pkgs-unstable.kubernetes-helm
       pkgs-unstable.kustomize
+      pkgs-unstable.kubectl-convert
       pkgs-unstable.operator-sdk
       pkgs-unstable.stern
       pkgs-unstable.velero
