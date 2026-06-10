@@ -110,10 +110,10 @@ alt-slash = 'layout h_tiles h_accordion v_accordion'
 alt-f = 'fullscreen'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-alt-h = 'focus --boundaries all-monitors-outer-frame left'
+alt-h = 'focus --boundaries-action wrap-around-the-workspace left'
 alt-j = 'focus --boundaries-action wrap-around-the-workspace down'
 alt-k = 'focus --boundaries-action wrap-around-the-workspace up'
-alt-l = 'focus --boundaries all-monitors-outer-frame right'
+alt-l = 'focus --boundaries-action wrap-around-the-workspace right'
 alt-comma = 'focus-monitor --wrap-around prev'
 alt-period = 'focus-monitor --wrap-around next'
 
