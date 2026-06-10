@@ -1,4 +1,4 @@
-"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
+# "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 [opener]
 vscode = [{ run = '"code" %s', desc = "Open with VS Code", orphan = true, for = "unix"}]
 [open]

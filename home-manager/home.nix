@@ -11,7 +11,7 @@ let
     # /ollama.nix
     /aws/aws.nix
     /restic/restic.nix
-    /yazi/yazi.nix
+    /yazi/yazi.nix # terminal file browser
   ];
 
 in
@@ -54,7 +54,6 @@ in
       viddy # alternate watch command
       watch
       wget
-      pkgs-unstable.yazi # file-browser
       # Nix
       nixd # lsp
       nixfmt

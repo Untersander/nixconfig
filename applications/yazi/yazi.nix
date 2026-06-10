@@ -1,6 +1,10 @@
 
-{ config, ... }:
+{ config, pkgs-unstable, ... }:
 {
+  programs.yazi = {
+    enable = true;
+    package = pkgs-unstable.yazi;
+  };
   home.file.yazi = {
     enable = true;
     target = "./.config/yazi/yazi.toml";
