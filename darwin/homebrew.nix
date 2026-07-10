@@ -1,12 +1,13 @@
 { ... }:
 {
   homebrew = {
-    enable = true;
+    enable = false;
     caskArgs.no_quarantine = true;
     global.brewfile = true;
-    onActivation.cleanup = "zap";
+    # onActivation.cleanup = "zap";
     onActivation.extraFlags = [
-      "--force-cleanup"
+      # "--force-cleanup"
+      # "--zap"
     ];
     masApps = {
       "Windows App" = 1295203466;
@@ -78,6 +79,7 @@
       "anchore/grype"
       "argoproj/tap"
       "dagger/tap"
+      "felixKratz/formulae"
       "fluxcd/tap"
       "go-task/tap"
       "goreleaser/tap"
@@ -103,9 +105,10 @@
       "entr"
       "fclones"
       "fd"
+      "felixKratz/formulae/borders"
       "ffmpeg"
       "fluxcd/tap/flux"
-      "gdu"
+      "gdu" # graphic du
       "gitleaks"
       "gnmic"
       "go"
@@ -116,6 +119,7 @@
       "hadolint"
       "handfish/tap/talos-pilot"
       "hashicorp/tap/packer"
+      "helm"
       "hubble"
       "imagemagick"
       "ingress2gateway"
