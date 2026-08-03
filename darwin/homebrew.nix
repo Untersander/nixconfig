@@ -1,10 +1,10 @@
-{ ... }:
+{ lib, ... }:
 {
   homebrew = {
-    enable = false;
+    enable = true;
     caskArgs.no_quarantine = true;
     global.brewfile = true;
-    # onActivation.cleanup = "zap";
+    onActivation.cleanup = "zap";
     onActivation.extraFlags = [
       # "--force-cleanup"
       # "--zap"
@@ -75,25 +75,32 @@
       # "thunderbird"
       # "visual-studio"
     ];
-    taps = [
-      "anchore/grype"
-      "argoproj/tap"
-      "dagger/tap"
-      "felixKratz/formulae"
-      "fluxcd/tap"
-      "go-task/tap"
-      "goreleaser/tap"
-      "handfish/tap"
-      "hashicorp/tap"
-      "nikitabobko/tap"
-      "rest-sh/tap"
-      "siderolabs/tap"
-    ];
+    taps =
+      lib.map
+        (tap: {
+          name = tap;
+          trusted = true;
+          force_auto_update = true;
+        })
+        [
+          "anchore/grype"
+          "argoproj/tap"
+          "dagger/tap"
+          "felixKratz/formulae"
+          "fluxcd/tap"
+          "go-task/tap"
+          "goreleaser/tap"
+          "handfish/tap"
+          "hashicorp/tap"
+          "nikitabobko/tap"
+          "rest-sh/tap"
+          "siderolabs/tap"
+        ];
     brews = [
       "argocd"
       "argoproj/tap/kubectl-argo-rollouts"
       "blueutil"
-      "broot"
+      # "broot"
       "btop"
       "cilium-cli"
       "clusterctl"
@@ -119,7 +126,7 @@
       "hadolint"
       "handfish/tap/talos-pilot"
       "hashicorp/tap/packer"
-      "helm"
+      # "helm"
       "hubble"
       "imagemagick"
       "ingress2gateway"

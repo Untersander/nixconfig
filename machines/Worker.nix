@@ -91,27 +91,27 @@
           "HIDKeyboardModifierMappingDst" = 30064771129;
         }
         ## Windows Keyboard
-        {
-          # Left CMD to left Option
-          "HIDKeyboardModifierMappingSrc" = 30064771299;
-          "HIDKeyboardModifierMappingDst" = 30064771298;
-        }
-        {
-          # Left Option to left CMD
-          "HIDKeyboardModifierMappingSrc" = 30064771298;
-          "HIDKeyboardModifierMappingDst" = 30064771299;
-        }
+        # {
+        #   # Left CMD to left Option
+        #   "HIDKeyboardModifierMappingSrc" = 30064771299;
+        #   "HIDKeyboardModifierMappingDst" = 30064771298;
+        # }
+        # {
+        #   # Left Option to left CMD
+        #   "HIDKeyboardModifierMappingSrc" = 30064771298;
+        #   "HIDKeyboardModifierMappingDst" = 30064771299;
+        # }
         ## Mac Keyboard
-        # {
-        #   # Right CMD to right Option
-        #   "HIDKeyboardModifierMappingSrc" = 30064771303;
-        #   "HIDKeyboardModifierMappingDst" = 30064771302;
-        # }
-        # {
-        #   # Right Option to right CMD
-        #   "HIDKeyboardModifierMappingSrc" = 30064771302;
-        #   "HIDKeyboardModifierMappingDst" = 30064771303;
-        # }
+        {
+          # Right CMD to right Option
+          "HIDKeyboardModifierMappingSrc" = 30064771303;
+          "HIDKeyboardModifierMappingDst" = 30064771302;
+        }
+        {
+          # Right Option to right CMD
+          "HIDKeyboardModifierMappingSrc" = 30064771302;
+          "HIDKeyboardModifierMappingDst" = 30064771303;
+        }
       ];
     };
     defaults = {
