@@ -118,9 +118,9 @@
           eval "$(fzf --zsh)"
           eval "$(zoxide init --cmd cd zsh)"
           # Kubernetes TODO export
-          refresh_kubeconfig() {
+          kubeconfig_refresh() {
             if ! command -v kubectl >/dev/null 2>&1; then
-              print -u2 "refresh_kubeconfig: kubectl is not available"
+              print -u2 "kubeconfig_refresh: kubectl is not available"
               return 1
             fi
 
@@ -148,7 +148,7 @@
             done
 
             if [[ -z "$kubeconfig_sources" ]]; then
-              print -u2 "refresh_kubeconfig: no kubeconfig fragments found under $HOME/.kube"
+              print -u2 "kubeconfig_refresh: no kubeconfig fragments found under $HOME/.kube"
               return 1
             fi
 
