@@ -34,6 +34,8 @@ in
     packages = with pkgs; [
       # Command Line
       age # encryption tool
+      asciinema
+      asciinema-agg
       atac # postman like cli tool
       bat
       btop
