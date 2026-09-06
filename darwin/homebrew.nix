@@ -85,6 +85,7 @@
         })
         [
           "anchore/grype"
+          "anomalyco/tap"
           "argoproj/tap"
           "dagger/tap"
           "felixKratz/formulae"
@@ -98,6 +99,7 @@
           "siderolabs/tap"
         ];
     brews = [
+      "anomalyco/tap/opencode"
       "argocd"
       "argoproj/tap/kubectl-argo-rollouts"
       "blueutil"
