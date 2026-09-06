@@ -17,6 +17,7 @@
     casks = [
       "1password"
       "1password-cli"
+      "Untersander/tap/explorer"
       "blender"
       "brave-browser"
       "devpod"
@@ -84,6 +85,7 @@
           force_auto_update = true;
         })
         [
+          "Untersander/tap"
           "anchore/grype"
           "anomalyco/tap"
           "argoproj/tap"
