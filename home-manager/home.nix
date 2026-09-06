@@ -45,8 +45,12 @@ in
       htop
       # hygg # nice file reader for pdf's etc.
       jujutsu
+      nmap
+      nodejs
       restic
       pkgs-oldstable.resticprofile
+      ripgrep
+      ripgrep-all
       skopeo
       # smassh # monkeytype like
       sshpass
@@ -105,9 +109,6 @@ in
       enableZshIntegration = true;
     };
   };
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

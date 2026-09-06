@@ -7,9 +7,12 @@
 # -h: Print help
 # -i: Install Nix dependencies (Homebrew, Nix)
 # -r: Restore Nix configuration
+# -y: Yes to all prompts (non-interactive)
 
 set -eu
 printf '\n'
+
+YES=0
 
 BOLD="$(tput bold 2>/dev/null || printf '')"
 GREY="$(tput setaf 0 2>/dev/null || printf '')"
@@ -28,6 +31,7 @@ help() {
    echo "  -h  Print help"
    echo "  -i  Install Nix dependencies (Homebrew, Nix)"
    echo "  -r  Restore Nix configuration"
+   echo "  -y  Yes to all prompts (non-interactive)"
    echo
 }
 
@@ -48,13 +52,16 @@ completed() {
 }
 
 confirm() {
+  if [ "$YES" -eq 1 ]; then
+    return 0
+  fi
   printf "%s " "${MAGENTA}?${NO_COLOR} $* ${BOLD}[y/N]${NO_COLOR}"
   set +e
   read -r yn </dev/tty
   rc=$?
   set -e
   if [ $rc -ne 0 ]; then
-    error "Error reading from prompt (please re-run with the '--yes' option)"
+    error "Error reading from prompt (please re-run with the '-y' option)"
     exit 1
   fi
   if [ "$yn" != "y" ] && [ "$yn" != "yes" ]; then
@@ -101,7 +108,13 @@ post_restore() {
 }
 
 
-while getopts "hir" option; do
+for arg in "$@"; do
+  if [ "$arg" = "--yes" ]; then
+    YES=1
+  fi
+done
+
+while getopts "hiyr" option; do
   case $option in
     h)
       help
@@ -111,6 +124,9 @@ while getopts "hir" option; do
       ;;
     r)
       restore_nix_configuration
+      ;;
+    y)
+      YES=1
       ;;
     ?)
       error "Invalid option: -$OPTARG"

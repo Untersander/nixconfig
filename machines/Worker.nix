@@ -289,10 +289,8 @@
         # };
         # Specify the iterm preferences directory
         "com.googlecode.iterm2" = {
-          PrefsCustomFolder = "~/nixconfig/applications/iTerm2/";
-        };
-        # Tell iTerm2 to use the custom preferences in the directory
-        "com.googlecode.iterm2" = {
+          PrefsCustomFolder = "~/nixconfig/applications/iterm2/";
+          # Tell iTerm2 to use the custom preferences in the directory
           LoadPrefsFromCustomFolder = true;
         };
       };

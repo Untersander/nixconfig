@@ -106,7 +106,6 @@
       "argoproj/tap/kubectl-argo-rollouts"
       "blueutil"
       # "broot"
-      "btop"
       "cilium-cli"
       "clusterctl"
       "cmctl"
@@ -122,7 +121,6 @@
       "felixKratz/formulae/borders"
       "ffmpeg"
       "fluxcd/tap/flux"
-      "gdu" # graphic du
       "gitleaks"
       "gnmic"
       "go"
@@ -146,16 +144,12 @@
       "mas"
       "mtr"
       "ncdu" # graphic du
-      "nmap"
       "nnn" # terminal file browser
-      "node"
       "opentofu"
       "pandoc"
       "podman"
       "protobuf"
       "rdfind"
-      "ripgrep"
-      "ripgrep-all"
       "sevenzip"
       "siderolabs/tap/talosctl"
       "syft"

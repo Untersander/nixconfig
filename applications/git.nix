@@ -73,7 +73,7 @@ in
       };
       push.autoSetupRemote = true;
       pull.rebase = true;
-      fetch.pruen = true;
+      fetch.prune = true;
       help.autocorrect = 30;
       commit.gpgsign = true;
       "gpg \"ssh\"".program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
