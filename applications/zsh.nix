@@ -184,7 +184,8 @@
   home.file.p10k = {
     enable = true;
     target = "./.config/zsh/.p10k.zsh";
-    source = ./.p10k.zsh;
+    # Out of store symlink to the actual file in ~/nixconfig to remove the need to rebuild the system
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconfig/applications/.p10k.zsh";
   };
   programs.bat.enable = true;
   programs.jq.enable = true;
