@@ -20,6 +20,7 @@
       "Untersander/tap/explorer"
       "blender"
       "brave-browser"
+      "claude"
       "devpod"
       "discord"
       "drawio"
