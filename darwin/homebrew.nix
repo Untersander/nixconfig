@@ -2,7 +2,6 @@
 {
   homebrew = {
     enable = true;
-    caskArgs.no_quarantine = true;
     global.brewfile = true;
     onActivation.cleanup = "zap";
     onActivation.extraFlags = [
