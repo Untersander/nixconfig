@@ -1,4 +1,4 @@
-{ pkgs, pkgs-oldstable, pkgs-unstable, ... }:
+{ pkgs, pkgs-unstable, ... }:
 let
   imports = map (x: ../applications + x) [
     /git.nix
@@ -10,7 +10,7 @@ let
     /go.nix
     # /ollama.nix
     /aws/aws.nix
-    /restic/restic.nix
+    # /restic/restic.nix
     /yazi/yazi.nix # terminal file browser
   ];
 
@@ -47,8 +47,8 @@ in
       jujutsu
       nmap
       nodejs
-      restic
-      pkgs-oldstable.resticprofile
+      # restic
+      # pkgs-oldstable.resticprofile
       ripgrep
       ripgrep-all
       skopeo

@@ -16,6 +16,7 @@ default:
     source:
       - "$HOME/github"
       - "$HOME/gitlab"
+      - "$HOME/Library/CloudStorage/OneDrive-Personal/Dokumente/MyNotes"
   forget:
     # dry-run: true
     prune: true
