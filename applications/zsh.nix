@@ -56,6 +56,9 @@
       export PATH="''$PATH:''$HOME/.local/bin"
       # Rust tools
       export PATH="''$PATH:''$HOME/.cargo/bin"
+      # Haskell tools
+      export GHCUP_USE_XDG_DIRS=true
+      export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
       # Expand alias
       # globalias() {
       #   zle _expand_alias
