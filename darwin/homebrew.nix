@@ -103,7 +103,7 @@
           "hashicorp/tap"
           "nikitabobko/tap"
           "rest-sh/tap"
-          "siderolabs/tap"
+          # "siderolabs/tap"
         ];
     brews = [
       "anomalyco/tap/opencode"
@@ -157,7 +157,8 @@
       "protobuf"
       "rdfind"
       "sevenzip"
-      "siderolabs/tap/talosctl"
+      # "siderolabs/tap/talosctl"
+      "talosctl"
       "syft"
       "telnet"
       "terraform"
