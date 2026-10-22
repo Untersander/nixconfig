@@ -205,6 +205,7 @@
       show_help = false;
       inline_height = 20;
       keymap_mode = "vim-insert";
+      sync_address = "https://atuin.k8s.garden";
     };
   };
 }
