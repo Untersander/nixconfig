@@ -25,6 +25,7 @@
       "discord"
       "drawio"
       "firefox"
+      "ghostty"
       "go-task/tap/go-task"
       "google-chrome"
       "goreleaser/tap/goreleaser"
