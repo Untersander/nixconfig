@@ -108,7 +108,7 @@
           # "siderolabs/tap"
         ];
     brews = [
-      "anomalyco/tap/opencode"
+      "anomalyco/tap/opencode-v2"
       "argocd"
       "argoproj/tap/kubectl-argo-rollouts"
       "blueutil"

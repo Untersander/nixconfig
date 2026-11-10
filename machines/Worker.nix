@@ -55,23 +55,6 @@
       settings = { };
     };
   };
-  # Enable ollama background service
-  # launchd = {
-  #   user = {
-  #     agents = {
-  #       ollama-serve = {
-  #         command = "${pkgs.ollama}/bin/ollama serve";
-  #         serviceConfig = {
-  #           Label = "Ollama";
-  #           KeepAlive = true;
-  #           RunAtLoad = true;
-  #           StandardOutPath = "/tmp/ollama_worker.out.log";
-  #           StandardErrorPath = "/tmp/ollama_worker.err.log";
-  #         };
-  #       };
-  #     };
-  #   };
-  # };
 
   # Maybe add:
   # system.activationScripts.postActivation.text = ''
