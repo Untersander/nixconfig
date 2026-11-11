@@ -37,12 +37,8 @@ in
       asciinema
       asciinema-agg
       atac # postman like cli tool
-      bat
       btop
-      comma # nix-shell wrapper
       gdu # graphic du
-      git
-      htop
       # hygg # nice file reader for pdf's etc.
       jujutsu
       nmap
@@ -104,10 +100,12 @@ in
       '';
     };
     nix-index = {
-      # comma dependency
+      # Prebuilt database from nix-index-database
       enable = true;
       enableZshIntegration = true;
     };
+    # comma (nix-shell wrapper) using the prebuilt nix-index database
+    nix-index-database.comma.enable = true;
   };
 
   # This value determines the Home Manager release that your

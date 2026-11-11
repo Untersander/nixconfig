@@ -15,6 +15,10 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -25,14 +29,20 @@
       nixpkgs-oldstable,
       nixpkgs-unstable,
       home-manager,
+      nix-index-database,
     }:
     {
       darwinConfigurations =
         let
           system = "aarch64-darwin";
-          pkgs = import inputs.nixpkgs { inherit system; };
-          pkgs-oldstable = import inputs.nixpkgs-oldstable { inherit system; };
-          pkgs-unstable = import inputs.nixpkgs-unstable { inherit system; };
+          pkgs-oldstable = import inputs.nixpkgs-oldstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+          pkgs-unstable = import inputs.nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
         in
         {
           "Worker" = nix-darwin.lib.darwinSystem {
@@ -48,8 +58,9 @@
                   verbose = true;
                   users.jan.imports = [
                     ./home-manager/home.nix
+                    nix-index-database.homeModules.nix-index
                   ];
-                  extraSpecialArgs = { inherit pkgs pkgs-oldstable pkgs-unstable; };
+                  extraSpecialArgs = { inherit pkgs-oldstable pkgs-unstable; };
                 };
               }
             ];

@@ -36,7 +36,6 @@
       "kopiaui"
       "losslesscut"
       "mac-mouse-fix"
-      "mactex"
       "microsoft-auto-update"
       "microsoft-excel"
       "microsoft-outlook"
@@ -152,9 +151,7 @@
       "mas"
       "mtr"
       "ncdu" # graphic du
-      "nnn" # terminal file browser
       "opentofu"
-      "pandoc"
       "podman"
       "protobuf"
       "rdfind"

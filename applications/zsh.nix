@@ -9,8 +9,8 @@
     defaultKeymap = "viins";
 
     shellAliases = {
-      switch = "sudo -H nix run nix-darwin -- switch --flake ~/nixconfig";
-      check = "sudo -H nix run nix-darwin -- check --flake ~/nixconfig";
+      switch = "sudo darwin-rebuild switch --flake ~/nixconfig";
+      check = "sudo darwin-rebuild check --flake ~/nixconfig";
       clab = "docker run --rm -it --privileged --network=host -v /var/run/docker.sock:/var/run/docker.sock -v /var/run/netns:/var/run/netns -v /etc/hosts:/etc/hosts -v /var/lib/docker/containers:/var/lib/docker/containers --pid=host -v $(pwd):$(pwd) -w $(pwd) ghcr.io/srl-labs/clab /usr/bin/containerlab";
       nixbuild = "darwin-rebuild build --flake ~/nixconfig";
       nixupdate = "nix flake update --flake ~/nixconfig";
@@ -18,7 +18,7 @@
       nixudiff = "cd ~/nixconfig && nixupdate && nixbuild && nix store diff-closures /var/run/current-system ./result";
       nvdiff = "cd ~/nixconfig && nixbuild && nvd diff /var/run/current-system ./result";
       nvudiff = "cd ~/nixconfig && nixupdate && nixbuild && nvd diff /var/run/current-system ./result";
-      gas = "git add . & switch";
+      gas = "git add . && switch";
       sz = "source ~/.config/zsh/.zshrc";
       k = "kubectl";
       k8s-show-ns = " kubectl api-resources --verbs=list --namespaced -o name  | xargs -n 1 kubectl get --show-kind --ignore-not-found  -n";
@@ -81,14 +81,6 @@
       bindkey -M viins '^f' vi-forward-word
       # Also fix annoying vi backspace
       bindkey '^?' backward-delete-char
-      # Yazi shell wrapper
-      function y() {
-        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-        command yazi "$@" --cwd-file="$tmp"
-        IFS= read -r -d ''' cwd < "$tmp"
-        [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
-        rm -f -- "$tmp"
-      }
     '';
     # .zshrc
     # initExtraFirst = '''';
@@ -97,10 +89,8 @@
         initExtraBeforeCompInit = lib.mkOrder 550 ''
           source "$ZINIT_HOME/zinit.zsh"
           zinit ice depth=1; zinit light romkatv/powerlevel10k
-          # Add in zsh plugins
-          zinit light zsh-users/zsh-syntax-highlighting
+          # Add in zsh plugins (autosuggestions and syntax highlighting come from home-manager)
           zinit light zsh-users/zsh-completions
-          zinit light zsh-users/zsh-autosuggestions
           zinit light Aloxaf/fzf-tab
         '';
         zshConfig = lib.mkOrder 1000 ''
@@ -117,9 +107,6 @@
           zstyle ':completion:*' menu no
           zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
           zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
-          # Shell integrations
-          eval "$(fzf --zsh)"
-          eval "$(zoxide init --cmd cd zsh)"
           # Kubernetes TODO export
           kubeconfig_refresh() {
             if ! command -v kubectl >/dev/null 2>&1; then
@@ -196,7 +183,13 @@
     enable = true;
   };
   programs.pandoc.enable = true;
-  programs.zoxide.enable = true;
+  programs.zoxide = {
+    enable = true;
+    options = [
+      "--cmd"
+      "cd"
+    ];
+  };
   programs.atuin = {
     enable = true;
     flags = [ "--disable-up-arrow" ];

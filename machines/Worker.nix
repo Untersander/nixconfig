@@ -341,6 +341,15 @@
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
 
+  # Store maintenance
+  nix.gc = {
+    automatic = true;
+    options = "--delete-older-than 14d";
+  };
+  # Deduplicate the store periodically via a launchd job. Prefer this over
+  # nix.settings.auto-optimise-store, which is buggy on darwin (NixOS/nix#7273)
+  nix.optimise.automatic = true;
+
   # Used for backwards compatibility. please read the changelog
   # before changing: `darwin-rebuild changelog`.
   system.stateVersion = 7;
